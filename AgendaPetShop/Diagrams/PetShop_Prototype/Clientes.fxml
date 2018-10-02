@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="60.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-style: none none solid none;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="16.0" text="Clientes">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="382.0" layoutY="16.0" text="Data:" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="16.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="478.0" layoutY="59.0" prefHeight="542.0" prefWidth="122.0" style="-fx-border-color: black; -fx-border-style: solid none none solid;" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Menu Inicial">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Clientes" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Donos" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Agenda" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Agendamento" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Pacotes" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Pagamentos" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Pendências" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Consultas" />
+            <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="120.0" text="Sobre" />
+         </children>
+      </VBox>
+      <AnchorPane layoutY="59.0" prefHeight="545.0" prefWidth="678.0">
+         <children>
+            <Label layoutX="26.0" layoutY="32.0" text="Nome:" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="414.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="357.0" layoutY="32.0" text="Idade:" AnchorPane.rightAnchor="273.0" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="17.0" layoutY="93.0" text="Espécie:" AnchorPane.leftAnchor="17.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="414.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="357.0" layoutY="93.0" text="Raça:" AnchorPane.rightAnchor="273.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="146.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="12.0" layoutY="151.0" text="Pelagem:" AnchorPane.leftAnchor="12.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="414.0" layoutY="146.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="356.0" layoutY="151.0" text="Porte:" AnchorPane.rightAnchor="276.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="92.0" layoutY="197.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" />
+            <Label layoutX="21.0" layoutY="202.0" text="Donos:" AnchorPane.leftAnchor="21.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="365.0" layoutY="197.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text="+" AnchorPane.rightAnchor="281.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <ListView layoutX="414.0" layoutY="197.0" prefHeight="284.0" prefWidth="238.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="26.0" />
+            <TextField layoutX="14.0" layoutY="281.0" prefHeight="200.0" prefWidth="313.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="281.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="253.0" text="Observações:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="234.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="SALVAR" AnchorPane.bottomAnchor="14.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="397.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="ALTERAR" AnchorPane.bottomAnchor="14.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="556.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="EXCLUIR" AnchorPane.bottomAnchor="14.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="19.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="NOVO">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
