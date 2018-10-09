@@ -1,0 +1,62 @@
+--CREATE DATABASE Petshop_DBase
+--GO
+USE Petshop_DBase
+GO
+
+CREATE TABLE Dono
+(
+	cpf VARCHAR(14) NOT NULL PRIMARY KEY,
+	nome VARCHAR(70) NOT NULL,
+	endereco VARCHAR(255) NOT NULL,
+	telefone INT,
+	celular INT NOT NULL,
+	observacoes VARCHAR(MAX)
+)
+
+CREATE TABLE Raca
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Pelagem
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Porte
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE Cliente
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	nome VARCHAR(50) NOT NULL,
+	idade VARCHAR(40) NOT NULL,
+	racaId INT NOT NULL REFERENCES Raca(id),
+	pelagemId INT NOT NULL REFERENCES Pelagem(id),
+	porteId INT NOT NULL REFERENCES Porte(id),
+	observacoes VARCHAR(MAX)
+)
+
+CREATE TABLE ClienteXDono
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	clienteId INT NOT NULL REFERENCES Cliente(id),
+	donoCpf VARCHAR(14) NOT NULL REFERENCES Dono(cpf)
+)
+
+CREATE TABLE Funcionarios
+(
+	cpf VARCHAR(14) NOT NULL PRIMARY KEY,
+	nome VARCHAR(70) NOT NULL,
+	endereco VARCHAR(255) NOT NULL,
+	telefone INT,
+	celular INT NOT NULL,
+	observacoes VARCHAR(MAX),
+	salario DECIMAL(10,2) NOT NULL
+)
+
