@@ -1,11 +1,13 @@
 --CREATE DATABASE Petshop_DBase
 --GO
+
 USE Petshop_DBase
 GO
 
 CREATE TABLE Dono
 (
-	cpf VARCHAR(14) NOT NULL PRIMARY KEY,
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	cpf VARCHAR(14) NOT NULL,
 	nome VARCHAR(70) NOT NULL,
 	endereco VARCHAR(255) NOT NULL,
 	telefone INT,
@@ -46,12 +48,13 @@ CREATE TABLE ClienteXDono
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
 	clienteId INT NOT NULL REFERENCES Cliente(id),
-	donoCpf VARCHAR(14) NOT NULL REFERENCES Dono(cpf)
+	donoId INT NOT NULL REFERENCES Dono(id)
 )
 
-CREATE TABLE Funcionarios
+CREATE TABLE Funcionario
 (
-	cpf VARCHAR(14) NOT NULL PRIMARY KEY,
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	cpf VARCHAR(14) NOT NULL,
 	nome VARCHAR(70) NOT NULL,
 	endereco VARCHAR(255) NOT NULL,
 	telefone INT,
@@ -59,4 +62,47 @@ CREATE TABLE Funcionarios
 	observacoes VARCHAR(MAX),
 	salario DECIMAL(10,2) NOT NULL
 )
+
+CREATE TABLE Servico
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(50) NOT NULL,
+	preco DECIMAL(10,2) NOT NULL,
+	duracao TIME NOT NULL
+)
+
+CREATE TABLE TipoPacote
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(30) NOT NULL
+)
+
+CREATE TABLE Pacote
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	clienteId INT NOT NULL REFERENCES Cliente(id),
+	tipo INT NOT NULL REFERENCES TipoPacote(id),
+	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
+	pago BIT NOT NULL 
+)
+
+CREATE TABLE Agendamento
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	clienteId INT NOT NULL REFERENCES Cliente(id),
+	data DATE NOT NULL,
+	horario TIME NOT NULL,
+	servicoId INT NOT NULL REFERENCES Servico(id),
+	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
+	pago BIT NOT NULL 
+)
+
+CREATE TABLE PacoteXAgendamento
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	pacoteId INT NOT NULL REFERENCES Pacote(id),
+	agendamentoId INT NOT NULL REFERENCES Agendamento(id)
+)
+
+
 
