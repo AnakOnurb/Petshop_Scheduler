@@ -97,6 +97,7 @@ public class MenuController implements Initializable
 	{
 		lblTitle.setText("Sobre");
 		loadContent("sobre.fxml");
+		DBConn.getConnection();
 	}
 
 	@FXML
