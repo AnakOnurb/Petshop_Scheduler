@@ -20,25 +20,26 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="643.0" layoutY="63.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="SALVAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="63.0">
+            <Button layoutX="644.0" layoutY="87.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="CANCELAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="87.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="642.0" layoutY="107.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="ALTERAR" AnchorPane.bottomAnchor="408.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="107.0">
+            <Button layoutX="644.0" layoutY="146.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="PAGAR" AnchorPane.bottomAnchor="369.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="146.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
             <TableView layoutX="20.0" layoutY="194.0" prefHeight="337.0" prefWidth="743.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="200.0">
               <columns>
+                  <TableColumn prefWidth="75.0" text="CHECK" />
                 <TableColumn prefWidth="89.0" text="CLIENTE" />
                 <TableColumn prefWidth="67.0" text="CÓDIGO" />
                   <TableColumn prefWidth="106.0" text="DONOS" />
                   <TableColumn prefWidth="116.0" text="MÉTODO" />
                   <TableColumn prefWidth="85.0" text="VALOR" />
                   <TableColumn prefWidth="78.0" text="PACOTE" />
-                  <TableColumn prefWidth="101.0" text="PENDÊNCIAS" />
+                  <TableColumn prefWidth="135.0" text="DESCRIÇÃO" />
               </columns>
             </TableView>
             <Label layoutX="15.0" layoutY="64.0" text="Cliente:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="64.0">
@@ -58,28 +59,17 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="642.0" layoutY="150.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="EXCLUIR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="150.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Button>
-            <Label layoutX="303.0" layoutY="21.0" text="Pacote:" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="21.0">
+            <Label layoutX="303.0" layoutY="21.0" text="Descrição:" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="21.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="370.0" layoutY="16.0" prefHeight="32.0" prefWidth="150.0" AnchorPane.leftAnchor="370.0" AnchorPane.topAnchor="16.0" />
-            <Label layoutX="303.0" layoutY="75.0" text="Pendências:" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="75.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <TextField layoutX="303.0" layoutY="103.0" prefHeight="78.0" prefWidth="217.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="103.0">
+            <TextField layoutX="303.0" layoutY="47.0" prefHeight="134.0" prefWidth="325.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="47.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="643.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="NOVO" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+            <Button layoutX="643.0" layoutY="20.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="ADICIONAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

@@ -8,11 +8,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="518.0" layoutY="282.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="NOVO">
+      <Button layoutX="26.0" layoutY="509.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="NOVO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="356.0" layoutY="271.0" text="Turnos:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <ListView layoutX="359.0" layoutY="300.0" prefHeight="199.0" prefWidth="303.0" />
       <TextField layoutX="424.0" layoutY="219.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
@@ -23,17 +29,17 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="518.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="EXCLUIR">
+      <Button layoutX="566.0" layoutY="509.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="EXCLUIR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="424.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="ALTERAR">
+      <Button layoutX="380.0" layoutY="509.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="ALTERAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="356.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="SALVAR">
+      <Button layoutX="212.0" layoutY="509.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="SALVAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -43,7 +49,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="258.0" prefHeight="273.0" prefWidth="316.0">
+      <TextField layoutX="24.0" layoutY="258.0" prefHeight="242.0" prefWidth="316.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
