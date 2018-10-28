@@ -4,27 +4,54 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.*;
 
 public class DBConn 
 {
-	private static byte[] password;
-	private static byte[] username;
+	private static String password;
+	private static String username;
 	private static String host;
 	
 	private static void getLogin()
 	{
-		username = Utils.Encrypt("sa");
-		password = Utils.Encrypt("bruno02");
-		host = "BRUNO-NOTE";
+		BufferedReader br = null;
+		try 
+		{
+			br = new BufferedReader(new FileReader("/resources/authentication.txt"));
+		    String line = br.readLine();
+		    int i = 1;
+		    while (line != null) 
+		    {
+		    	if(i == 1)
+		    		username = line.toString();
+		    	if(i == 2)
+		    		password = line.toString();
+		    	if(i == 3)
+		    		host = line.toString();
+		        line = br.readLine();
+		    }
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
+		finally 
+		{
+		    try 
+		    {
+				br.close();
+			} 
+		    catch (IOException e) 
+		    {
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public static void getConnection()
 	{
 		getLogin();
-		//String url = "jdbc:sqlserver://"+ host +"\\sqlexpress;databaseName=Petshop_DBase";
-		//String dbURL = "jdbc:sqlserver://BRUNO-NOTE\\MSSQLSERVER;user=sa;password=bruno02";
-		//String dbURL = "jdbc:sqlserver://BRUNO-NOTE;databaseName=Petshop_DBase;user=sa;password=bruno02";
-		String dbURL = "jdbc:sqlserver://BRUNO-NOTE:1433;user=sa;password=bruno02;databaseName=Petshop_DBase";
+		String dbURL = "jdbc:sqlserver://"+ host +":1433;user="+ username +";password="+ password +";databaseName=Petshop_DBase";
 
 		try 
 		{
