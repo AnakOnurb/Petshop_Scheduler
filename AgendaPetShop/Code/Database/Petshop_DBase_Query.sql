@@ -1,5 +1,5 @@
---CREATE DATABASE Petshop_DBase
---GO
+CREATE DATABASE Petshop_DBase
+GO
 
 USE Petshop_DBase
 GO
@@ -84,7 +84,12 @@ CREATE TABLE Pacote
 	clienteId INT NOT NULL REFERENCES Cliente(id),
 	tipo INT NOT NULL REFERENCES TipoPacote(id),
 	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
-	pago BIT NOT NULL 
+)
+
+CREATE TABLE Pagamento
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	data DATE NOT NULL
 )
 
 CREATE TABLE Agendamento
@@ -95,15 +100,6 @@ CREATE TABLE Agendamento
 	horario TIME NOT NULL,
 	servicoId INT NOT NULL REFERENCES Servico(id),
 	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
-	pago BIT NOT NULL 
+	pacoteId INT REFERENCES Pacote(id),
+	pagamentoId INT REFERENCES Pagamento(id)
 )
-
-CREATE TABLE PacoteXAgendamento
-(
-	id INT NOT NULL IDENTITY PRIMARY KEY,
-	pacoteId INT NOT NULL REFERENCES Pacote(id),
-	agendamentoId INT NOT NULL REFERENCES Agendamento(id)
-)
-
-
-
