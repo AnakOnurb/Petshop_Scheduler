@@ -3,7 +3,10 @@ package pack.petshop;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.io.*;
 
 public class DBConn 
@@ -11,13 +14,12 @@ public class DBConn
 	private static String password;
 	private static String username;
 	private static String host;
-	
 	private static void getLogin()
 	{
 		BufferedReader br = null;
 		try 
 		{
-			br = new BufferedReader(new FileReader("/resources/authentication.txt"));
+			br = new BufferedReader(new FileReader("./src/resources/authentication.txt"));
 		    String line = br.readLine();
 		    int i = 1;
 		    while (line != null) 
@@ -29,6 +31,7 @@ public class DBConn
 		    	if(i == 3)
 		    		host = line.toString();
 		        line = br.readLine();
+		        i++;
 		    }
 		} 
 		catch (IOException e) 
@@ -53,10 +56,11 @@ public class DBConn
 		getLogin();
 		String dbURL = "jdbc:sqlserver://"+ host +":1433;user="+ username +";password="+ password +";databaseName=Petshop_DBase";
 
+		Connection conn = null;
 		try 
 		{
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			Connection conn = DriverManager.getConnection(dbURL);
+			conn = DriverManager.getConnection(dbURL);
             if (conn != null) 
             {
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
@@ -64,6 +68,19 @@ public class DBConn
                 System.out.println("Driver version: " + dm.getDriverVersion());
                 System.out.println("Product name: " + dm.getDatabaseProductName());
                 System.out.println("Product version: " + dm.getDatabaseProductVersion());
+                
+                String query = " insert into Funcionario (cpf, nome, endereco, telefone, celular, observacoes, salario)"
+                        + " values (?, ?, ?, ?, ?, ?, ?)";
+                PreparedStatement preparedStmt = conn.prepareStatement(query);
+                preparedStmt.setString (1, "469.706.568-96");
+                preparedStmt.setString (2, "Bruno");
+                preparedStmt.setString   (3, "Rua Cav");
+                preparedStmt.setInt (4, 23111859);
+                preparedStmt.setInt (5, 988014642);
+                preparedStmt.setString (6, "OBS");
+                preparedStmt.setDouble(7, 25.5);
+
+                preparedStmt.execute();
             }
 		}
 		catch (SQLException e) 
@@ -73,6 +90,17 @@ public class DBConn
 		catch (ClassNotFoundException e) 
 		{
 			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 }
