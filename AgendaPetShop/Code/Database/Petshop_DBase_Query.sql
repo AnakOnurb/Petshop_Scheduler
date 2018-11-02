@@ -10,8 +10,8 @@ CREATE TABLE Dono
 	cpf VARCHAR(14) NOT NULL,
 	nome VARCHAR(70) NOT NULL,
 	endereco VARCHAR(255) NOT NULL,
-	telefone INT,
-	celular INT NOT NULL,
+	telefone VARCHAR(13),
+	celular VARCHAR(14) NOT NULL,
 	observacoes VARCHAR(MAX)
 )
 
@@ -33,7 +33,7 @@ CREATE TABLE Porte
 	descricao VARCHAR(50) NOT NULL
 )
 
-CREATE TABLE Cliente
+CREATE TABLE Pet
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
 	nome VARCHAR(50) NOT NULL,
@@ -44,10 +44,10 @@ CREATE TABLE Cliente
 	observacoes VARCHAR(MAX)
 )
 
-CREATE TABLE ClienteXDono
+CREATE TABLE PetXDono
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
-	clienteId INT NOT NULL REFERENCES Cliente(id),
+	petId INT NOT NULL REFERENCES Pet(id),
 	donoId INT NOT NULL REFERENCES Dono(id)
 )
 
@@ -57,8 +57,8 @@ CREATE TABLE Funcionario
 	cpf VARCHAR(14) NOT NULL,
 	nome VARCHAR(70) NOT NULL,
 	endereco VARCHAR(255) NOT NULL,
-	telefone INT,
-	celular INT NOT NULL,
+	telefone VARCHAR(13),
+	celular VARCHAR(14) NOT NULL,
 	observacoes VARCHAR(MAX),
 	salario DECIMAL(10,2) NOT NULL
 )
@@ -81,7 +81,7 @@ CREATE TABLE TipoPacote
 CREATE TABLE Pacote
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
-	clienteId INT NOT NULL REFERENCES Cliente(id),
+	petId INT NOT NULL REFERENCES Pet(id),
 	tipo INT NOT NULL REFERENCES TipoPacote(id),
 	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
 )
@@ -95,11 +95,12 @@ CREATE TABLE Pagamento
 CREATE TABLE Agendamento
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
-	clienteId INT NOT NULL REFERENCES Cliente(id),
+	petId INT NOT NULL REFERENCES Pet(id),
 	data DATE NOT NULL,
 	horario TIME NOT NULL,
 	servicoId INT NOT NULL REFERENCES Servico(id),
 	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
 	pacoteId INT REFERENCES Pacote(id),
-	pagamentoId INT REFERENCES Pagamento(id)
+	pagamentoId INT REFERENCES Pagamento(id),
+	cancelado BIT NOT NULL
 )
