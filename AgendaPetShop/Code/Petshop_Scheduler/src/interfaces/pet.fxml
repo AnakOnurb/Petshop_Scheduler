@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="1.0" prefHeight="547.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="26.0" layoutY="32.0" text="Nome:" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="414.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="27.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="357.0" layoutY="32.0" text="Idade:" AnchorPane.rightAnchor="273.0" AnchorPane.topAnchor="32.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="17.0" layoutY="93.0" text="Espécie:" AnchorPane.leftAnchor="17.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="414.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="357.0" layoutY="93.0" text="Raça:" AnchorPane.rightAnchor="273.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField layoutX="92.0" layoutY="146.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="12.0" layoutY="151.0" text="Pelagem:" AnchorPane.leftAnchor="12.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="356.0" layoutY="151.0" text="Porte:" AnchorPane.rightAnchor="276.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="92.0" layoutY="197.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" />
+            <Label layoutX="21.0" layoutY="202.0" text="Donos:" AnchorPane.leftAnchor="21.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="365.0" layoutY="197.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text="+" AnchorPane.rightAnchor="281.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <ListView layoutX="414.0" layoutY="197.0" prefHeight="284.0" prefWidth="238.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="26.0" />
+            <TextField layoutX="14.0" layoutY="281.0" prefHeight="200.0" prefWidth="313.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="281.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="253.0" text="Observações:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="177.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="SALVAR" AnchorPane.bottomAnchor="16.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="334.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="ALTERAR" AnchorPane.bottomAnchor="16.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="491.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="EXCLUIR" AnchorPane.bottomAnchor="16.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="12.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="NOVO">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <ComboBox layoutX="514.0" layoutY="144.0" prefHeight="32.0" prefWidth="238.0" />
+            <Button layoutX="641.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="PESQUISAR">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

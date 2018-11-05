@@ -1,5 +1,6 @@
 package pack.petshop;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -51,7 +52,7 @@ public class DBConn
 		}
 	}
 	
-	public static void getConnection()
+	public static Connection getConnection()
 	{
 		getLogin();
 		String dbURL = "jdbc:sqlserver://"+ host +":1433;user="+ username +";password="+ password +";databaseName=Petshop_DBase";
@@ -68,19 +69,7 @@ public class DBConn
                 System.out.println("Driver version: " + dm.getDriverVersion());
                 System.out.println("Product name: " + dm.getDatabaseProductName());
                 System.out.println("Product version: " + dm.getDatabaseProductVersion());
-                
-                String query = " insert into Funcionario (cpf, nome, endereco, telefone, celular, observacoes, salario)"
-                        + " values (?, ?, ?, ?, ?, ?, ?)";
-                PreparedStatement preparedStmt = conn.prepareStatement(query);
-                preparedStmt.setString (1, "469.706.568-96");
-                preparedStmt.setString (2, "Bruno");
-                preparedStmt.setString   (3, "Rua Cav");
-                preparedStmt.setInt (4, 23111859);
-                preparedStmt.setInt (5, 988014642);
-                preparedStmt.setString (6, "OBS");
-                preparedStmt.setDouble(7, 25.5);
-
-                preparedStmt.execute();
+                return conn;
             }
 		}
 		catch (SQLException e) 
@@ -102,5 +91,6 @@ public class DBConn
 				e.printStackTrace();
 			}
 		}
+		return null;
 	}
 }

@@ -33,7 +33,7 @@
             <TableView layoutX="20.0" layoutY="194.0" prefHeight="337.0" prefWidth="743.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="200.0">
               <columns>
                   <TableColumn prefWidth="75.0" text="CHECK" />
-                <TableColumn prefWidth="89.0" text="CLIENTE" />
+                <TableColumn prefWidth="89.0" text="PET" />
                 <TableColumn prefWidth="67.0" text="CÓDIGO" />
                   <TableColumn prefWidth="106.0" text="DONOS" />
                   <TableColumn prefWidth="116.0" text="MÉTODO" />
@@ -42,7 +42,7 @@
                   <TableColumn prefWidth="135.0" text="DESCRIÇÃO" />
               </columns>
             </TableView>
-            <Label layoutX="15.0" layoutY="64.0" text="Cliente:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="64.0">
+            <Label layoutX="15.0" layoutY="64.0" text="Pet:" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="64.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

@@ -23,7 +23,7 @@
             <TableView layoutX="20.0" layoutY="187.0" prefHeight="342.0" prefWidth="643.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="187.0">
               <columns>
                   <TableColumn prefWidth="75.0" text="CHECK" />
-                <TableColumn prefWidth="89.0" text="CLIENTE" />
+                <TableColumn prefWidth="89.0" text="PET" />
                 <TableColumn prefWidth="78.0" text="CÓDIGO" />
                   <TableColumn prefWidth="109.0" text="DONOS" />
                   <TableColumn prefWidth="100.0" text="VALOR" />
@@ -31,7 +31,7 @@
                   <TableColumn prefWidth="196.0" text="DESCRIÇÃO" />
               </columns>
             </TableView>
-            <Label layoutX="14.0" layoutY="57.0" text="Cliente:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="57.0">
+            <Label layoutX="14.0" layoutY="57.0" text="Pet:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="57.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -42,7 +42,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="645.0" layoutY="81.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="EXCLUIR" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="81.0">
+            <Button layoutX="645.0" layoutY="79.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="EXCLUIR" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="79.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

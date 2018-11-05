@@ -4,6 +4,7 @@ GO
 USE Petshop_DBase
 GO
 
+--TABLES
 CREATE TABLE Dono
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
@@ -104,3 +105,19 @@ CREATE TABLE Agendamento
 	pagamentoId INT REFERENCES Pagamento(id),
 	cancelado BIT NOT NULL
 )
+
+GO
+--PROCEDURE
+CREATE PROCEDURE sp_InsereFuncionario(
+	@cpf VARCHAR(14),
+	@nome VARCHAR(70),
+	@endereco VARCHAR(255),
+	@telefone VARCHAR(13),
+	@celular VARCHAR(14),
+	@observacoes VARCHAR(MAX),
+	@salario DECIMAL(10,2))
+AS BEGIN
+	INSERT INTO Funcionario (cpf, nome, endereco, telefone, celular, observacoes, salario)
+	VALUES (@cpf, @nome, @endereco, @telefone, @celular, @observacoes, @salario)
+END
+GO

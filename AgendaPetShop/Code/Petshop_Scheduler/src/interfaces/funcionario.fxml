@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="518.0" layoutY="282.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="NOVO">
+      <Button layoutX="365.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="NOVO FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -23,17 +23,17 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="518.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="EXCLUIR">
+      <Button layoutX="369.0" layoutY="445.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="EXCLUIR FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="424.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="ALTERAR">
+      <Button layoutX="369.0" layoutY="387.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="ALTERAR FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="518.0" layoutY="356.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="96.0" text="SALVAR">
+      <Button layoutX="369.0" layoutY="332.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="SALVAR FUNCIONARIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -98,5 +98,10 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
+      <Button layoutX="369.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="PESQUISAR FUNCIONÁRIO">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

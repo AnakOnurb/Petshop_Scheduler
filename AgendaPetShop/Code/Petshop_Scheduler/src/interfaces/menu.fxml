@@ -29,17 +29,18 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="btnClientes" mnemonicParsing="false" onAction="#btnClientesHandler" prefHeight="45.0" prefWidth="118.0" text="Pets" />
-            <Button fx:id="btnDonos" mnemonicParsing="false" onAction="#btnDonosHandler" prefHeight="45.0" prefWidth="118.0" text="Donos" />
+            <Button fx:id="btnPet" mnemonicParsing="false" onAction="#btnPetHandler" prefHeight="45.0" prefWidth="118.0" text="Pets" />
+            <Button fx:id="btnDono" mnemonicParsing="false" onAction="#btnDonoHandler" prefHeight="45.0" prefWidth="118.0" text="Donos" />
             <Button fx:id="btnAgenda" mnemonicParsing="false" onAction="#btnAgendaHandler" prefHeight="45.0" prefWidth="118.0" text="Agenda" />
-            <Button fx:id="btnAgendamento" mnemonicParsing="false" onAction="#btnAgendamentoHandler" prefHeight="45.0" prefWidth="118.0" text="Serviços" />
-            <Button fx:id="btnPacotes" mnemonicParsing="false" onAction="#btnPacotesHandler" prefHeight="45.0" prefWidth="118.0" text="Pacotes" />
-            <Button fx:id="btnPagamentos" mnemonicParsing="false" onAction="#btnPagamentosHandler" prefHeight="45.0" prefWidth="120.0" text="Pagamentos" />
-            <Button fx:id="btnPendencias" mnemonicParsing="false" onAction="#btnPendenciasHandler" prefHeight="45.0" prefWidth="120.0" text="Pendências" />
+            <Button fx:id="btnAgendamento" mnemonicParsing="false" onAction="#btnAgendamentoHandler" prefHeight="45.0" prefWidth="118.0" text="Agendamento" />
+            <Button fx:id="btnPacote" mnemonicParsing="false" onAction="#btnPacoteHandler" prefHeight="45.0" prefWidth="118.0" text="Pacotes" />
+            <Button fx:id="btnPagamento" mnemonicParsing="false" onAction="#btnPagamentoHandler" prefHeight="45.0" prefWidth="120.0" text="Pagamentos" />
+            <Button fx:id="btnPendencia" mnemonicParsing="false" onAction="#btnPendenciaHandler" prefHeight="45.0" prefWidth="120.0" text="Pendências" />
             <Button fx:id="btnConsulta" mnemonicParsing="false" onAction="#btnConsultaHandler" prefHeight="45.0" prefWidth="120.0" text="Consultas" />
-            <Button fx:id="btnFuncionarios" mnemonicParsing="false" onAction="#btnFuncionariosHandler" prefHeight="45.0" prefWidth="120.0" text="Cadastros" />
-            <Button fx:id="btnSobre" mnemonicParsing="false" onAction="#btnSobreHandler" prefHeight="45.0" prefWidth="120.0" text="Sobre" />
-            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#btnSairHandler" prefHeight="50.0" prefWidth="120.0" text="Sair" />
+            <Button fx:id="btnCadastro" mnemonicParsing="false" onAction="#btnCadastroHandler" prefHeight="45.0" prefWidth="120.0" text="Cadastros" />
+            <Button fx:id="btnFuncionario" mnemonicParsing="false" onAction="#btnFuncionarioHandler" prefHeight="45.0" prefWidth="120.0" text="Funcionários" />
+            <Button fx:id="btnSobre" mnemonicParsing="false" onAction="#btnSobreHandler" prefHeight="25.0" prefWidth="118.0" text="Sobre" />
+            <Button fx:id="btnSair" mnemonicParsing="false" onAction="#btnSairHandler" prefHeight="25.0" prefWidth="118.0" text="Sair" />
          </children>
       </VBox>
       <Pane fx:id="pnlContent" layoutY="54.0" prefHeight="547.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="54.0" />

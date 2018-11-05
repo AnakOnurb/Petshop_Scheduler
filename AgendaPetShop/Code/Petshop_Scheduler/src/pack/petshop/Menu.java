@@ -27,16 +27,11 @@ public class Menu extends Application
 			Parent root = FXMLLoader.load(getClass().getResource("/interfaces/menu.fxml"));
 	        stage.setTitle("Menu");
 	        
-			//Carrega o arquivo FXML com a definição da tela
-			//root = (AnchorPane)FXMLLoader.load(getClass().getResource("/interfaces/Menu_Inicial.fxml"));
-			
-			//Define a sena principal (janela)
 			Scene scene = new Scene(root, 900, 600);
 			
 			//Carrega o arquivo CSS
 			//scene.getStylesheets().add(getClass().getResource("FXAppOne.css").toExternalForm());
 			
-			//Faz a mágica...
 			stage.setScene(scene);
 			stage.show();
 	

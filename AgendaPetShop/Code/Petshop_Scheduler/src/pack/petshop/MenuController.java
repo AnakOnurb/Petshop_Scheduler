@@ -30,16 +30,16 @@ public class MenuController implements Initializable
 	}
 	
 	@FXML
-	protected void btnClientesHandler(ActionEvent event) 
+	protected void btnPetHandler(ActionEvent event) 
 	{
-		lblTitle.setText("Cadastro de Cliente");
-		loadContent("cliente.fxml");
+		lblTitle.setText("Cadastro de Pets");
+		loadContent("pet.fxml");
 	}
 	
 	@FXML
-	protected void btnDonosHandler(ActionEvent event)
+	protected void btnDonoHandler(ActionEvent event)
 	{
-		lblTitle.setText("Cadastro de Dono");
+		lblTitle.setText("Cadastro de Donos");
 		loadContent("dono.fxml");
 	}
 	
@@ -58,21 +58,21 @@ public class MenuController implements Initializable
 	}
 	
 	@FXML
-	protected void btnPacotesHandler(ActionEvent event)
+	protected void btnPacoteHandler(ActionEvent event)
 	{
 		lblTitle.setText("Cadastro de Pacotes");
 		loadContent("pacote.fxml");
 	}
 	
 	@FXML
-	protected void btnPagamentosHandler(ActionEvent event)
+	protected void btnPagamentoHandler(ActionEvent event)
 	{
 		lblTitle.setText("Pagamentos");
 		loadContent("pagamento.fxml");
 	}
 	
 	@FXML
-	protected void btnPendenciasHandler(ActionEvent event)
+	protected void btnPendenciaHandler(ActionEvent event)
 	{
 		lblTitle.setText("Pendências");
 		loadContent("pendencia.fxml");
@@ -82,11 +82,18 @@ public class MenuController implements Initializable
 	protected void btnConsultaHandler(ActionEvent event)
 	{
 		lblTitle.setText("Consultas");
-		loadContent("consulta.fxml");
+		loadContent("menuconsulta.fxml");
 	}
 	
 	@FXML
-	protected void btnFuncionariosHandler(ActionEvent event) 
+	protected void btnCadastroHandler(ActionEvent event)
+	{
+		lblTitle.setText("Cadastros");
+		loadContent("menucadastro.fxml");
+	}
+	
+	@FXML
+	protected void btnFuncionarioHandler(ActionEvent event) 
 	{
 		lblTitle.setText("Funcionários");
 		loadContent("funcionario.fxml");

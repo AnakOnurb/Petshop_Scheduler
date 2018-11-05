@@ -20,7 +20,7 @@
       </Label>
       <TableView layoutX="14.0" layoutY="43.0" prefHeight="454.0" prefWidth="750.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="45.0">
         <columns>
-          <TableColumn prefWidth="92.0" text="CLIENTE" />
+          <TableColumn prefWidth="92.0" text="PETS" />
           <TableColumn prefWidth="75.0" text="CÓDIGO" />
             <TableColumn prefWidth="139.0" text="DONOS" />
             <TableColumn prefWidth="147.0" text="PENDÊNCIAS" />
