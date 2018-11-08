@@ -104,4 +104,3 @@ CREATE TABLE Agendamento
 	pagamentoId INT REFERENCES Pagamento(id),
 	cancelado BIT NOT NULL
 )
-

@@ -29,8 +29,7 @@ public class Menu extends Application
 	        
 			Scene scene = new Scene(root, 900, 600);
 			
-			//Carrega o arquivo CSS
-			//scene.getStylesheets().add(getClass().getResource("FXAppOne.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/interfaces/styleteste.css").toExternalForm());
 			
 			stage.setScene(scene);
 			stage.show();

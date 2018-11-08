@@ -62,11 +62,17 @@
          </font>
       </Button>
       <ComboBox layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
-      <ListView layoutX="389.0" layoutY="85.0" prefHeight="81.0" prefWidth="373.0" />
-      <Button layoutX="342.0" layoutY="85.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text="+">
+      <ComboBox layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
+      <Label layoutX="456.0" layoutY="90.0" text="Raça:">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
-      </Button>
+      </Label>
+      <ComboBox layoutX="525.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0" />
+      <Label layoutX="456.0" layoutY="138.0" text="Porte:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
