@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="19.0" layoutY="90.0" text="Donos:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="676.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="19.0" layoutY="42.0" text="Nome:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="88.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="19.0" layoutY="138.0" text="ID:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="325.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <TableView layoutX="14.0" layoutY="181.0" prefHeight="306.0" prefWidth="750.0">
+         <columns>
+            <TableColumn prefWidth="100.0" text="NOME" />
+            <TableColumn prefWidth="58.0" text="CÓDIGO" />
+            <TableColumn prefWidth="171.0" text="DONOS" />
+            <TableColumn prefWidth="60.0" text="IDADE" />
+            <TableColumn prefWidth="65.0" text="ESPÉCIE" />
+            <TableColumn prefWidth="55.0" text="RAÇA" />
+            <TableColumn prefWidth="70.0" text="PELAGEM" />
+            <TableColumn prefWidth="59.0" text="PORTE" />
+            <TableColumn prefWidth="126.0" text="OBSERVAÇÕES" />
+         </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="635.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <ComboBox layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
+      <ComboBox layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
+      <Label layoutX="456.0" layoutY="90.0" text="Raça:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="525.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0" />
+      <Label layoutX="456.0" layoutY="138.0" text="Porte:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
