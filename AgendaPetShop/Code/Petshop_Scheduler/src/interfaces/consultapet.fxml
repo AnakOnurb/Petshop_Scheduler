@@ -13,7 +13,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="676.0">
+      <TextField fx:id="txtNome" layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="676.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -23,7 +23,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="88.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtId" layoutX="88.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -33,12 +33,12 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="325.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+      <Button fx:id="btnSelecionar" layoutX="325.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnSelecionarHandler" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="14.0" layoutY="181.0" prefHeight="306.0" prefWidth="750.0">
+      <TableView fx:id="dtDados" layoutX="14.0" layoutY="181.0" prefHeight="306.0" prefWidth="750.0">
          <columns>
             <TableColumn prefWidth="100.0" text="NOME" />
             <TableColumn prefWidth="58.0" text="CÓDIGO" />
@@ -51,24 +51,24 @@
             <TableColumn prefWidth="126.0" text="OBSERVAÇÕES" />
          </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+      <Button fx:id="btnPesquisar" layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="635.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
+      <Button fx:id="btnLimpar" layoutX="635.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparHandler" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
-      <ComboBox layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
+      <ComboBox fx:id="cboDonos" layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
+      <ComboBox fx:id="cboRaca" layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0" />
       <Label layoutX="456.0" layoutY="90.0" text="Raça:">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="525.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0" />
+      <ComboBox fx:id="cboPorte" layoutX="525.0" layoutY="133.0" prefHeight="32.0" prefWidth="238.0" />
       <Label layoutX="456.0" layoutY="138.0" text="Porte:">
          <font>
             <Font name="Arial Black" size="14.0" />

@@ -15,39 +15,39 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="231.0" layoutY="20.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
+            <TextField fx:id="txtId" layoutX="231.0" layoutY="20.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="20.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="18.0" layoutY="112.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="120.0" text="PESQUISAR" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="112.0">
+            <Button fx:id="btnPesquisar" layoutX="18.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="120.0" text="PESQUISAR" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="112.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="20.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="SELECIONAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+            <Button fx:id="btnSelecionar" layoutX="20.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnSelecionarHandler" prefHeight="32.0" prefWidth="122.0" text="SELECIONAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <RadioButton layoutX="18.0" layoutY="25.0" mnemonicParsing="false" text="Clientes" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0">
+            <RadioButton fx:id="rbClientes" layoutX="18.0" layoutY="25.0" mnemonicParsing="false" text="Clientes" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="18.0" layoutY="73.0" mnemonicParsing="false" text="Donos" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="60.0">
+            <RadioButton fx:id="rbDonos" layoutX="18.0" layoutY="73.0" mnemonicParsing="false" text="Donos" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="60.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </RadioButton>
-            <TableView layoutX="20.0" layoutY="163.0" prefHeight="326.0" prefWidth="752.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="163.0">
+            <TableView fx:id="dtDados" layoutX="20.0" layoutY="163.0" prefHeight="326.0" prefWidth="752.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="163.0">
               <columns>
                 <TableColumn prefWidth="201.0" text="NOME" />
                 <TableColumn prefWidth="111.0" text="CÓDIGO" />
                   <TableColumn prefWidth="211.0" text="INFORMAÇÕES" />
               </columns>
             </TableView>
-            <TextField layoutX="231.0" layoutY="68.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="68.0">
+            <TextField fx:id="txtNome" layoutX="231.0" layoutY="68.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="68.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -57,7 +57,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="231.0" layoutY="112.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="112.0">
+            <TextField fx:id="txtCPF" layoutX="231.0" layoutY="112.0" prefHeight="32.0" prefWidth="532.0" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="112.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="426.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="122.0" text="LIMPAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="154.0">
+            <Button fx:id="btnLimpar" layoutX="426.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparHandler" prefHeight="32.0" prefWidth="122.0" text="LIMPAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="154.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

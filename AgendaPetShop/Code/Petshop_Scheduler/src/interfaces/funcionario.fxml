@@ -8,12 +8,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="365.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="NOVO FUNCIONÁRIO">
+      <Button fx:id="btnNovo" layoutX="365.0" layoutY="274.0" mnemonicParsing="false" onAction="#btnNoboHandler" prefHeight="32.0" prefWidth="316.0" text="NOVO FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <TextField layoutX="424.0" layoutY="219.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtSalario" layoutX="424.0" layoutY="219.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -23,17 +23,17 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="369.0" layoutY="445.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="EXCLUIR FUNCIONÁRIO">
+      <Button fx:id="btnExcluir" layoutX="369.0" layoutY="445.0" mnemonicParsing="false" onAction="#btnExcluirHandler" prefHeight="32.0" prefWidth="316.0" text="EXCLUIR FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="369.0" layoutY="387.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="ALTERAR FUNCIONÁRIO">
+      <Button fx:id="btnAlterar" layoutX="369.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="316.0" text="ALTERAR FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="369.0" layoutY="332.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="SALVAR FUNCIONARIO">
+      <Button fx:id="btnSalvar" layoutX="369.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="316.0" text="SALVAR FUNCIONARIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -43,7 +43,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="24.0" layoutY="258.0" prefHeight="273.0" prefWidth="316.0">
+      <TextField fx:id="txtObservacoes" layoutX="24.0" layoutY="258.0" prefHeight="273.0" prefWidth="316.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -53,7 +53,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="424.0" layoutY="156.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtCelular" layoutX="424.0" layoutY="156.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -63,7 +63,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="102.0" layoutY="156.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtTelefone" layoutX="102.0" layoutY="156.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -73,7 +73,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="104.0" layoutY="98.0" prefHeight="32.0" prefWidth="562.0">
+      <TextField fx:id="txtEndereco" layoutX="104.0" layoutY="98.0" prefHeight="32.0" prefWidth="562.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -83,12 +83,12 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="428.0" layoutY="37.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtCPF" layoutX="428.0" layoutY="37.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="104.0" layoutY="37.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtNome" layoutX="104.0" layoutY="37.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -98,7 +98,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="369.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="316.0" text="PESQUISAR FUNCIONÁRIO">
+      <Button fx:id="btnPesquisar" layoutX="369.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="316.0" text="PESQUISAR FUNCIONÁRIO">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>

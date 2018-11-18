@@ -89,7 +89,8 @@ CREATE TABLE Pacote
 CREATE TABLE Pagamento
 (
 	id INT NOT NULL IDENTITY PRIMARY KEY,
-	data DATE NOT NULL
+	data DATE NOT NULL,
+	tipoId INT NOT NULL
 )
 
 CREATE TABLE Agendamento
@@ -103,4 +104,10 @@ CREATE TABLE Agendamento
 	pacoteId INT REFERENCES Pacote(id),
 	pagamentoId INT REFERENCES Pagamento(id),
 	cancelado BIT NOT NULL
+)
+
+CREATE TABLE TipoPagamento
+(
+	id INT NOT NULL IDENTITY PRIMARY KEY,
+	descricao VARCHAR(MAX) NOT NULL
 )

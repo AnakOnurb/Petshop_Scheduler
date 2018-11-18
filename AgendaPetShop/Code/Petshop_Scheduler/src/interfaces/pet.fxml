@@ -15,12 +15,12 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="92.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="27.0">
+            <TextField fx:id="txtNome" layoutX="92.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="27.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="414.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="27.0">
+            <TextField fx:id="txtIdade" layoutX="414.0" layoutY="27.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="27.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -30,7 +30,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="92.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+            <TextField fx:id="txtEspecie" layoutX="92.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -40,7 +40,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="414.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0">
+            <TextField fx:id="txtRaca" layoutX="414.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.rightAnchor="26.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -50,7 +50,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="92.0" layoutY="146.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
+            <TextField fx:id="txtPelagem" layoutX="92.0" layoutY="146.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -65,19 +65,19 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="92.0" layoutY="197.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" />
+            <ComboBox fx:id="cboDonos" layoutX="92.0" layoutY="197.0" prefHeight="32.0" prefWidth="238.0" AnchorPane.leftAnchor="92.0" />
             <Label layoutX="21.0" layoutY="202.0" text="Donos:" AnchorPane.leftAnchor="21.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="365.0" layoutY="197.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" text="+" AnchorPane.rightAnchor="281.0">
+            <Button fx:id="btnAdd" layoutX="365.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnAddHandler" prefHeight="32.0" prefWidth="32.0" text="+" AnchorPane.rightAnchor="281.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <ListView layoutX="414.0" layoutY="197.0" prefHeight="284.0" prefWidth="238.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="26.0" />
-            <TextField layoutX="14.0" layoutY="281.0" prefHeight="200.0" prefWidth="313.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="281.0">
+            <ListView fx:id="lstDonos" layoutX="414.0" layoutY="197.0" prefHeight="284.0" prefWidth="238.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="26.0" />
+            <TextField fx:id="txtObservacoes" layoutX="14.0" layoutY="281.0" prefHeight="200.0" prefWidth="313.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="281.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -87,28 +87,28 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="177.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="SALVAR" AnchorPane.bottomAnchor="16.0">
+            <Button fx:id="btnSalvar" layoutX="177.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="113.0" text="SALVAR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="334.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="ALTERAR" AnchorPane.bottomAnchor="16.0">
+            <Button fx:id="btnAlterar" layoutX="334.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="113.0" text="ALTERAR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="491.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="EXCLUIR" AnchorPane.bottomAnchor="16.0">
+            <Button fx:id="btnExcluir" layoutX="491.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnExcluirHandler" prefHeight="32.0" prefWidth="113.0" text="EXCLUIR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="12.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="NOVO">
+            <Button fx:id="btnNovo" layoutX="12.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="113.0" text="NOVO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <ComboBox layoutX="514.0" layoutY="144.0" prefHeight="32.0" prefWidth="238.0" />
-            <Button layoutX="641.0" layoutY="499.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="113.0" text="PESQUISAR">
+            <ComboBox fx:id="cboPorte" layoutX="514.0" layoutY="144.0" prefHeight="32.0" prefWidth="238.0" />
+            <Button fx:id="btnPesquisar" layoutX="641.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="113.0" text="PESQUISAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

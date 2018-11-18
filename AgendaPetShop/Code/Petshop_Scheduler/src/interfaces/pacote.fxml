@@ -13,13 +13,13 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="143.0" layoutY="17.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="17.0" />
+      <ComboBox fx:id="cboPet" layoutX="143.0" layoutY="17.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="17.0" />
       <Label layoutX="15.0" layoutY="69.0" text="Tipo:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="69.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="15.0" layoutY="307.0" prefHeight="226.0" prefWidth="750.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="300.0">
+      <TableView fx:id="dtDados" layoutX="15.0" layoutY="307.0" prefHeight="226.0" prefWidth="750.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="300.0">
          <columns>
             <TableColumn prefWidth="85.0" text="PET" />
             <TableColumn prefWidth="84.0" text="CÓDIGO" />
@@ -28,29 +28,29 @@
             <TableColumn prefWidth="261.0" text="DATAS, HORÁRIOS E SERVIÇO" />
          </columns>
       </TableView>
-      <Button layoutX="642.0" layoutY="202.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="DESMARCAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="202.0">
+      <Button fx:id="btnDesmarcar" layoutX="642.0" layoutY="202.0" mnemonicParsing="false" onAction="#btnDesmarcarHandler" prefHeight="32.0" prefWidth="124.0" text="DESMARCAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="202.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="642.0" layoutY="155.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="ALTERAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="155.0">
+      <Button fx:id="btnAlterar" layoutX="642.0" layoutY="155.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="124.0" text="ALTERAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="155.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="642.0" layoutY="108.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="SALVAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="108.0">
+      <Button fx:id="btnSalvar" layoutX="642.0" layoutY="108.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="124.0" text="SALVAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="108.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="143.0" layoutY="115.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="115.0" />
+      <ComboBox fx:id="cboFuncionario" layoutX="143.0" layoutY="115.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="115.0" />
       <Label layoutX="15.0" layoutY="120.0" text="Funcionário:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="120.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="143.0" layoutY="64.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="64.0" />
-      <TextField layoutX="146.0" layoutY="212.0" prefHeight="32.0" prefWidth="232.0" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="212.0">
+      <ComboBox fx:id="cboTipo" layoutX="143.0" layoutY="64.0" prefHeight="32.0" prefWidth="478.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="64.0" />
+      <TextField fx:id="txtHorario" layoutX="146.0" layoutY="212.0" prefHeight="32.0" prefWidth="232.0" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="212.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -65,14 +65,14 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="146.0" layoutY="161.0" prefHeight="32.0" prefWidth="232.0" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="161.0" />
-      <ListView layoutX="424.0" layoutY="161.0" prefHeight="127.0" prefWidth="197.0" AnchorPane.leftAnchor="424.0" AnchorPane.topAnchor="161.0" />
-      <Button layoutX="385.0" layoutY="161.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="32.0" text="+" AnchorPane.leftAnchor="385.0" AnchorPane.topAnchor="161.0">
+      <DatePicker fx:id="dtpData" layoutX="146.0" layoutY="161.0" prefHeight="32.0" prefWidth="232.0" AnchorPane.leftAnchor="146.0" AnchorPane.topAnchor="161.0" />
+      <ListView fx:id="lstServicos" layoutX="424.0" layoutY="161.0" prefHeight="127.0" prefWidth="197.0" AnchorPane.leftAnchor="424.0" AnchorPane.topAnchor="161.0" />
+      <Button fx:id="btnAddServico" layoutX="385.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnAddServicoHandler" prefHeight="84.0" prefWidth="32.0" text="+" AnchorPane.leftAnchor="385.0" AnchorPane.topAnchor="161.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="642.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="NOVO" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="61.0">
+      <Button fx:id="btnNovo" layoutX="642.0" layoutY="61.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="124.0" text="NOVO" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="61.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -82,6 +82,6 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="146.0" layoutY="258.0" prefHeight="32.0" prefWidth="271.0" />
+      <ComboBox fx:id="cboTipoServico" layoutX="146.0" layoutY="258.0" prefHeight="32.0" prefWidth="271.0" />
    </children>
 </AnchorPane>
