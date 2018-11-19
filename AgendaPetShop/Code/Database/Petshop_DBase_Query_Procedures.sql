@@ -71,6 +71,20 @@ END
 GO
 
 --PETS
+
+select * from Pet
+insert into Pelagem values ('Curto')
+insert into Pelagem values ('Longo')
+insert into Porte values ('Pequeno')
+insert into Porte values ('Médio')
+insert into Porte values ('Grande')
+insert into Raca values ('Lhasa')
+insert into Raca values ('Boxer')
+insert into Raca values ('Poodle')
+insert into Raca values ('Labrador')
+insert into Raca values ('Golden')
+
+
 CREATE PROCEDURE sp_Pet_Create(
 	@nome VARCHAR(50),
 	@idade VARCHAR(40),
@@ -131,6 +145,16 @@ AS BEGIN
 	EXEC (@Query)
 END
 GO
+
+CREATE PROCEDURE sp_Pet_Read2 (
+	@id INT,
+    @nome VARCHAR(MAX),
+	@racaId INT,
+	@porteId INT,
+	@donoId INT)
+AS BEGIN
+	SELECT * FROM Pet WHERE id = @id
+END
 
 CREATE PROCEDURE sp_Pet_Update (
 	@id INT,

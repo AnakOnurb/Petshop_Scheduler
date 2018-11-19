@@ -13,12 +13,12 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtCPF" layoutX="88.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="676.0">
+      <TextField fx:id="txtNome" layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="676.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -28,7 +28,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0">
+      <TextField fx:id="txtId" layoutX="525.0" layoutY="85.0" prefHeight="32.0" prefWidth="238.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -38,12 +38,12 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="325.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+      <Button fx:id="btnSelecionar" layoutX="325.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnSelecionarHandler" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <TableView layoutX="14.0" layoutY="134.0" prefHeight="353.0" prefWidth="750.0">
+      <TableView fx:id="dtDados" layoutX="14.0" layoutY="134.0" prefHeight="353.0" prefWidth="750.0">
          <columns>
             <TableColumn prefWidth="100.0" text="NOME" />
             <TableColumn prefWidth="111.0" text="CPF" />
@@ -54,12 +54,12 @@
             <TableColumn prefWidth="156.0" text="OBSERVAÇÕES" />
          </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+      <Button fx:id="btnPesquisar" layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="635.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
+      <Button fx:id="btnLimpar" layoutX="635.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparHandler" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>

@@ -13,8 +13,8 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="174.0" layoutY="28.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="28.0" />
-      <DatePicker layoutX="174.0" layoutY="78.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="78.0" />
+      <ComboBox fx:id="cboPet" layoutX="174.0" layoutY="28.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="28.0" />
+      <DatePicker fx:id="dtpData" layoutX="174.0" layoutY="78.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="78.0" />
       <Label layoutX="21.0" layoutY="80.0" text="Data:">
          <font>
             <Font name="Arial Black" size="14.0" />
@@ -25,7 +25,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <TableView layoutX="14.0" layoutY="287.0" prefHeight="246.0" prefWidth="752.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="287.0">
+      <TableView fx:id="dtDados" layoutX="14.0" layoutY="287.0" prefHeight="246.0" prefWidth="752.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="287.0">
          <columns>
             <TableColumn prefWidth="85.0" text="PET" />
             <TableColumn prefWidth="84.0" text="CÓDIGO" />
@@ -35,33 +35,33 @@
             <TableColumn prefWidth="119.0" text="TIPO DE SERVIÇO" />
          </columns>
       </TableView>
-      <TextField layoutX="174.0" layoutY="127.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="127.0">
+      <TextField fx:id="txtHorario" layoutX="174.0" layoutY="127.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="127.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="670.0" layoutY="177.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="DESMARCAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="177.0">
+      <Button fx:id="btnDesmarcar" layoutX="670.0" layoutY="177.0" mnemonicParsing="false" onAction="#btnDesmarcarHandler" prefHeight="32.0" prefWidth="124.0" text="DESMARCAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="177.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="670.0" layoutY="127.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="ALTERAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="127.0">
+      <Button fx:id="btnAlterar" layoutX="670.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="124.0" text="ALTERAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="127.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="670.0" layoutY="78.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="SALVAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="78.0">
+      <Button fx:id="btnSalvar" layoutX="670.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="124.0" text="SALVAR" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="78.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="174.0" layoutY="177.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="177.0" />
+      <ComboBox fx:id="cboFuncionario" layoutX="174.0" layoutY="177.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="177.0" />
       <Label layoutX="21.0" layoutY="182.0" text="Funcionário:">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="670.0" layoutY="28.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="NOVO" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
+      <Button fx:id="btnNovo" layoutX="670.0" layoutY="28.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="124.0" text="NOVO" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="28.0">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
@@ -71,8 +71,8 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Label>
-      <ComboBox layoutX="174.0" layoutY="228.0" prefHeight="32.0" prefWidth="406.0" />
-      <Button layoutX="642.0" layoutY="228.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="124.0" text="PAGAR">
+      <ComboBox fx:id="cboTipoServico" layoutX="174.0" layoutY="228.0" prefHeight="32.0" prefWidth="406.0" />
+      <Button fx:id="btnPagar" layoutX="642.0" layoutY="228.0" mnemonicParsing="false" onAction="#btnPagarHandler" prefHeight="32.0" prefWidth="124.0" text="PAGAR">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>

@@ -15,17 +15,17 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="15.0" layoutY="166.0" prefHeight="32.0" prefWidth="369.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="396.0" AnchorPane.topAnchor="166.0">
+            <TextField fx:id="btnIdPacote" layoutX="15.0" layoutY="166.0" prefHeight="32.0" prefWidth="369.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="396.0" AnchorPane.topAnchor="166.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Button layoutX="134.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="LIMPAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="134.0">
+            <Button fx:id="btnLimparPacote" layoutX="134.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparPacoteHandler" prefHeight="32.0" prefWidth="131.0" text="LIMPAR" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="134.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="14.0" layoutY="224.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+            <Button fx:id="btnPesquisarPacote" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnPesquisarPacoteHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -35,12 +35,12 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField layoutX="397.0" layoutY="91.0" prefHeight="32.0" prefWidth="369.0">
+            <TextField fx:id="txtDescricaoServico" layoutX="397.0" layoutY="91.0" prefHeight="32.0" prefWidth="369.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="15.0" layoutY="91.0" prefHeight="32.0" prefWidth="369.0">
+            <TextField fx:id="txtDescricaoPacote" layoutX="15.0" layoutY="91.0" prefHeight="32.0" prefWidth="369.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -50,17 +50,17 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="369.0" text="TIPOS DE PACOTES">
+            <Button fx:id="btnTipoPacote" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnTipoPacoteHandler" prefHeight="32.0" prefWidth="369.0" text="TIPOS DE PACOTES">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="397.0" layoutY="14.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="369.0" text="TIPOS DE SERVIÇOS">
+            <Button fx:id="btnTipoServico" layoutX="397.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnTipoServicoHandler" prefHeight="32.0" prefWidth="369.0" text="TIPOS DE SERVIÇOS">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <TextField layoutX="397.0" layoutY="166.0" prefHeight="32.0" prefWidth="369.0">
+            <TextField fx:id="btnIdServico" layoutX="397.0" layoutY="166.0" prefHeight="32.0" prefWidth="369.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -70,34 +70,34 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button layoutX="516.0" layoutY="501.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
+            <Button fx:id="btnLimparServico" layoutX="516.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparServicoHandler" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <TableView layoutX="15.0" layoutY="274.0" prefHeight="213.0" prefWidth="369.0">
+            <TableView fx:id="dtDadosPacote" layoutX="15.0" layoutY="274.0" prefHeight="213.0" prefWidth="369.0">
                <columns>
                   <TableColumn prefWidth="196.0" text="TIPO DE PACOTE" />
                   <TableColumn prefWidth="172.0" text="CÓDIGO" />
                </columns>
             </TableView>
-            <TableView layoutX="397.0" layoutY="274.0" prefHeight="213.0" prefWidth="369.0">
+            <TableView fx:id="dtDadosServico" layoutX="397.0" layoutY="274.0" prefHeight="213.0" prefWidth="369.0">
                <columns>
                   <TableColumn prefWidth="195.0" text="TIPO DE SERVIÇO" />
                   <TableColumn prefWidth="173.0" text="CÓDIGO" />
                </columns>
             </TableView>
-            <Button layoutX="253.0" layoutY="224.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+            <Button fx:id="btnSelecionarPacote" layoutX="253.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnSelecionarPacoteHandler" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="635.0" layoutY="224.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+            <Button fx:id="btnSelecionarServico" layoutX="635.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnSelecionarServicoHandler" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="397.0" layoutY="224.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+            <Button fx:id="btnPesquisarServico" layoutX="397.0" layoutY="224.0" mnemonicParsing="false" onAction="#btnPesquisarServicoHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

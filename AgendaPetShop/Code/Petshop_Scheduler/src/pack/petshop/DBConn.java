@@ -80,7 +80,7 @@ public class DBConn
 		{
 			e.printStackTrace();
 		}
-		finally 
+		/*finally 
 		{
 			try 
 			{
@@ -90,7 +90,7 @@ public class DBConn
 			{
 				e.printStackTrace();
 			}
-		}
+		}*/
 		return null;
 	}
 }

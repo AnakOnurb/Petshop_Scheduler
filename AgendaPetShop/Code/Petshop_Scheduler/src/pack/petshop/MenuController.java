@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import pack.DAO.PetDAO;
 
 public class MenuController implements Initializable
 {
@@ -104,7 +105,8 @@ public class MenuController implements Initializable
 	{
 		lblTitle.setText("Sobre");
 		loadContent("sobre.fxml");
-		DBConn.getConnection();
+		//DBConn.getConnection();
+		PetDAO.Read();
 	}
 
 	@FXML
