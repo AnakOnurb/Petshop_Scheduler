@@ -4,13 +4,14 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
+import java.sql.ResultSet;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 public class Utils 
 {
-	public static byte[] Encrypt(String data)
+	private static byte[] Encrypt(String data)
 	{
 		return Hash(data);
 	}
@@ -37,5 +38,10 @@ public class Utils
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static ResultSet ReadEspecie()
+	{
+		
 	}
 }

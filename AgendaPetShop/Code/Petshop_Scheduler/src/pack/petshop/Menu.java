@@ -29,7 +29,7 @@ public class Menu extends Application
 	        
 			Scene scene = new Scene(root, 900, 600);
 			
-			scene.getStylesheets().add(getClass().getResource("/interfaces/styleteste.css").toExternalForm());
+			//scene.getStylesheets().add(getClass().getResource("/interfaces/styleteste.css").toExternalForm());
 			
 			stage.setScene(scene);
 			stage.show();

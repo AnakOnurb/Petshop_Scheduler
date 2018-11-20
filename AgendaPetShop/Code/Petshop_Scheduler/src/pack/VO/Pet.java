@@ -5,6 +5,7 @@ public class Pet
 	private int id;
 	private String nome;
 	private String idade;
+	private int especieId;
 	private int racaId;
 	private int pelagemId;
 	private int porteId;
@@ -18,6 +19,9 @@ public class Pet
     
     public String getIdade() { return this.idade; }
     public void setIdade(String idade) { this.idade = idade; }
+    
+    public int getEspecieId() { return this.especieId; }
+    public void setEspecieId(int id) { this.especieId = id; }
     
     public int getRacaId() { return this.racaId; }
     public void setRacaId(int id) { this.racaId = id; }

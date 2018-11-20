@@ -59,12 +59,12 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="303.0" layoutY="21.0" text="Descrição:" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="21.0">
+            <Label layoutX="303.0" layoutY="65.0" text="Descrição:" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="65.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="txtDescricao" layoutX="303.0" layoutY="47.0" prefHeight="134.0" prefWidth="325.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="47.0">
+            <TextField fx:id="txtDescricao" layoutX="303.0" layoutY="90.0" prefHeight="91.0" prefWidth="325.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="90.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -75,6 +75,16 @@
                </font>
             </Button>
             <ComboBox fx:id="cboPet" layoutX="100.0" layoutY="60.0" prefHeight="32.0" prefWidth="150.0" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="60.0" />
+            <Label layoutX="303.0" layoutY="25.0" text="ID:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtID" layoutX="388.0" layoutY="20.0" prefHeight="32.0" prefWidth="150.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
    </children>

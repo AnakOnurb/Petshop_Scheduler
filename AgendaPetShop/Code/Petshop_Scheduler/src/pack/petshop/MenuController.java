@@ -1,5 +1,6 @@
 package pack.petshop;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,18 +8,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import pack.DAO.PetDAO;
 
 public class MenuController implements Initializable
-{
+{	
 	@FXML
 	private Label lblTitle;
 	
 	@FXML 
-	private Pane pnlContent;
+	public Pane pnlContent;
 	
 	@FXML
 	public Button btnMenu;
@@ -31,10 +31,26 @@ public class MenuController implements Initializable
 	}
 	
 	@FXML
-	protected void btnPetHandler(ActionEvent event) 
+	protected void btnPetHandler(ActionEvent event) throws IOException 
 	{
 		lblTitle.setText("Cadastro de Pets");
-		loadContent("pet.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/pet.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			PetController controller = loader.<PetController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
@@ -105,8 +121,6 @@ public class MenuController implements Initializable
 	{
 		lblTitle.setText("Sobre");
 		loadContent("sobre.fxml");
-		//DBConn.getConnection();
-		PetDAO.Read();
 	}
 
 	@FXML
@@ -122,7 +136,7 @@ public class MenuController implements Initializable
 		btnMenu.fire();
 	}
 
-	private void loadContent(String file)
+	public void loadContent(String file)
 	{
 		pnlContent.getChildren().clear();
 		try 
@@ -130,6 +144,7 @@ public class MenuController implements Initializable
 			Pane newLoadedPane = FXMLLoader.load(getClass().getResource("/interfaces/"+file));
 			pnlContent.setPrefSize(780, 547);
 			pnlContent.getChildren().add(newLoadedPane);
+			
 		} 
 		catch(Exception e) 
 		{
