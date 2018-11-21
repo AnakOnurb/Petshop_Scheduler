@@ -16,7 +16,6 @@ public class PetDAO
 	private static ArrayList<Pet> ReadPetSet(ResultSet rs)
 	{
 		ArrayList<Pet> Pets = new ArrayList<Pet>();
-		
 		try 
 		{
 			while (rs.next()) 
@@ -84,6 +83,7 @@ public class PetDAO
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
         ResultSet rs = null;
+        ArrayList<Pet> pets = new ArrayList<Pet>();
 		try 
 		{
 			cstmt = conn.prepareCall("{call sp_Pet_Read(?, ?, ?, ?, ?, ?)}");
@@ -93,6 +93,50 @@ public class PetDAO
 			cstmt.setInt("racaId", racaId);
 			cstmt.setInt("porteId", porteId);
 			cstmt.setInt("donoId", donoId);
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                pets = ReadPetSet(rs);
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return pets;
+	}
+	
+	public static ArrayList<Pet> ReadSimple()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Pet_ReadSimple()}");
 			boolean results = cstmt.execute();
 	        int rowsAffected = 0;
 	 
@@ -174,7 +218,7 @@ public class PetDAO
 		boolean results = false;
 		try 
 		{
-			cstmt = conn.prepareCall("{call sp_Pet_Create(?, ?, ?, ?, ?, ?, ?)}");
+			cstmt = conn.prepareCall("{call sp_Pet_Delete(?)}");
 			cstmt.setInt("id", id);
             results = cstmt.execute();
 		} 

@@ -51,6 +51,12 @@ AS BEGIN
 END
 GO
 
+CREATE PROCEDURE sp_Funcionario_ReadSimple
+AS BEGIN
+	SELECT * FROM Funcionario
+END
+GO
+
 CREATE PROCEDURE sp_Funcionario_Update (
 	@id INT,
 	@cpf VARCHAR(14),
@@ -87,6 +93,9 @@ insert into Raca values ('Labrador')
 insert into Raca values ('Golden')
 insert into Especie values ('Cão')
 insert into Especie values ('Gato')
+GO
+
+INSERT INTO Pet (nome, idade, especieId, racaId, pelagemId, porteId, observacoes) VALUES ('Thor', '4 anos', 2, 2, 2, 2, 'é um Deus')
 GO
 
 CREATE PROCEDURE sp_Pet_Create(
@@ -152,9 +161,15 @@ AS BEGIN
 	DECLARE @Query VARCHAR(MAX)
 
 	--SET @Query = 'SELECT p.id, p.nome, p.idade, p.racaId, p.pelagemId, p.porteId, p.observacoes FROM Pet p, Dono d, PetXDono pd' + @Condicao
-	SET @Query = 'SELECT p.id, p.nome, p.idade, p.especie, p.racaId, p.pelagemId, p.porteId, p.observacoes FROM Pet p' + @Condicao
+	SET @Query = 'SELECT p.id, p.nome, p.idade, p.especieId, p.racaId, p.pelagemId, p.porteId, p.observacoes FROM Pet p' + @Condicao
 
 	EXEC (@Query)
+END
+GO
+
+CREATE PROCEDURE sp_Pet_ReadSimple
+AS BEGIN
+	SELECT * FROM Pet
 END
 GO
 
@@ -233,6 +248,12 @@ AS BEGIN
 END
 GO
 
+CREATE PROCEDURE sp_Dono_ReadSimple
+AS BEGIN
+	SELECT * FROM Dono
+END
+GO
+
 CREATE PROCEDURE sp_Dono_Update (
 	@id INT,
 	@cpf VARCHAR(14),
@@ -257,7 +278,7 @@ GO
 CREATE PROCEDURE sp_Servico_Create(
 	@descricao VARCHAR(100),
 	@preco DECIMAL(10,2),
-	@duracao TIME)
+	@duracao INT)
 AS BEGIN
 	INSERT INTO Servico(descricao, preco, duracao) VALUES (@descricao, @preco, @duracao)
 	RETURN @@IDENTITY
@@ -268,7 +289,7 @@ CREATE PROCEDURE sp_Servico_Read (
 	@id INT,
     @descricao VARCHAR(100),
 	@preco DECIMAL(10,2),
-	@duracao TIME)
+	@duracao INT)
 AS BEGIN
 	DECLARE @Condicao VARCHAR(MAX)
 	SET @Condicao = ''
@@ -287,7 +308,9 @@ AS BEGIN
 		SET @Condicao = @Condicao + ' preco = ' + CAST(@preco AS VARCHAR(MAX)) + ' AND'
 	END
 	IF(@duracao IS NOT NULL) BEGIN
-		SET @Condicao = @Condicao + ' duracao = ' + CAST(@duracao AS VARCHAR(MAX)) + ' AND'
+		IF(@id != -1) BEGIN
+			SET @Condicao = @Condicao + ' duracao = ' + CAST(@duracao AS VARCHAR(MAX)) + ' AND'
+		END
 	END
 
 	IF(@id IS NOT NULL OR @descricao IS NOT NULL OR @preco IS NOT NULL OR @duracao IS NOT NULL) BEGIN
@@ -312,7 +335,7 @@ CREATE PROCEDURE sp_Servico_Update (
 	@id INT,
 	@descricao VARCHAR(100),
 	@preco DECIMAL(10,2),
-	@duracao TIME)
+	@duracao INT)
 AS BEGIN
 	UPDATE Servico SET descricao = @descricao, preco = @preco, duracao = @duracao WHERE id = @id
 END
@@ -530,5 +553,36 @@ CREATE PROCEDURE sp_Agendamento_Delete (
     @id INT)
 AS BEGIN
 	DELETE FROM Agendamento WHERE id = @id
+END
+GO
+
+--READSIMPLE PARA COMBOBOX
+CREATE PROCEDURE sp_Raca_ReadSimple
+AS BEGIN
+	SELECT * FROM Raca
+END
+GO
+
+CREATE PROCEDURE sp_Pelagem_ReadSimple
+AS BEGIN
+	SELECT * FROM Pelagem
+END
+GO
+
+CREATE PROCEDURE sp_Porte_ReadSimple
+AS BEGIN
+	SELECT * FROM Porte
+END
+GO
+
+CREATE PROCEDURE sp_Especie_ReadSimple
+AS BEGIN
+	SELECT * FROM Especie
+END
+GO
+
+CREATE PROCEDURE sp_TipoPagamento_ReadSimple
+AS BEGIN
+	SELECT * FROM TipoPagamento
 END
 GO

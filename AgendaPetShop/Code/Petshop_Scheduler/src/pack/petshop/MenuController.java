@@ -134,6 +134,9 @@ public class MenuController implements Initializable
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
 		btnMenu.fire();
+		Utils.ReadRacas();
+		Utils.ReadDono();
+		Utils.ReadEspecie();
 	}
 
 	public void loadContent(String file)

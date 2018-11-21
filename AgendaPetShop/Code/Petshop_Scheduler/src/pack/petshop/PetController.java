@@ -14,6 +14,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import pack.DAO.PetDAO;
 import pack.VO.Pet;
+import pack.VO.Raca;
 
 public class PetController implements Initializable
 {	
@@ -26,15 +27,19 @@ public class PetController implements Initializable
 	@FXML
 	private TextField txtIdade;
 	@FXML
+	private TextField txtObservacoes;
+	@FXML
 	private ComboBox<String> cboEspecie;
 	@FXML
 	private ComboBox<String> cboPelagem;
 	@FXML
-	private ComboBox<String> cboRaca;
+	private ComboBox<Raca> cboRaca;
 	@FXML
 	private ComboBox<String> cboPorte;
 	@FXML
 	private ComboBox<String> cboDonos;
+	@FXML
+	private ListView<String> lstDonos;
 	
 	
 	@FXML
@@ -46,10 +51,6 @@ public class PetController implements Initializable
 	public void InitData(Pane pnlContent, Label lblTitle) {
 		content = pnlContent;	
 		title = lblTitle;
-		if(pet.getNome() != null)
-		{
-			txtNome.setText(pet.getNome());
-		}
 	}
 	
 	@FXML
@@ -115,13 +116,27 @@ public class PetController implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-		ObservableList<String> options = FXCollections.observableArrayList(
-		            "Option 1",
-		            "Option 2",
-		            "Option 3"
-		);
-		
-		cboEspecie.setValue("oi");
-		cboEspecie.setItems(options);
+		if(pet.getNome() != null)
+		{
+			txtId.setText(String.valueOf(pet.getId()));
+			txtNome.setText(pet.getNome());
+			txtIdade.setText(pet.getIdade());
+			cboEspecie.setValue(String.valueOf(pet.getEspecieId()));
+			cboPelagem.setValue(String.valueOf(pet.getPelagemId()));
+			//cboRaca.setValue(String.valueOf(pet.getRacaId()));
+			cboPorte.setValue(String.valueOf(pet.getPorteId()));
+			txtObservacoes.setText(pet.getObservacoes());
+		}
+		populateComboBox();
+	}
+	
+	private void populateComboBox()
+	{
+		ObservableList<Raca> options = FXCollections.observableArrayList();
+		for(int i = 0; i < Utils.racas.size(); i++)
+		{	
+			options.add(Utils.racas.get(i));
+		}
+		cboRaca.setItems(options);
 	}
 }
