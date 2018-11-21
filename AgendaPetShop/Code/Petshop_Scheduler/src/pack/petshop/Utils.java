@@ -15,7 +15,9 @@ import javax.crypto.spec.PBEKeySpec;
 
 import pack.VO.Dono;
 import pack.VO.Especie;
+import pack.VO.Pelagem;
 import pack.VO.Pet;
+import pack.VO.Porte;
 import pack.VO.Raca;
 
 public class Utils 
@@ -23,6 +25,8 @@ public class Utils
 	public static ArrayList<Raca> racas = new ArrayList<Raca>();
 	public static ArrayList<Especie> especies = new ArrayList<Especie>();
 	public static ArrayList<Dono> donos = new ArrayList<Dono>();
+	public static ArrayList<Porte> portes = new ArrayList<Porte>();
+	public static ArrayList<Pelagem> pelagens = new ArrayList<Pelagem>();
 	
 	private static byte[] Encrypt(String data)
 	{
@@ -196,4 +200,101 @@ public class Utils
 			}
 		}
 	}
+
+	public static void ReadPorte()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Porte_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    Porte porte = new Porte();
+					    porte.setId(rs.getInt("id"));
+					    porte.setDescricao(rs.getString("descricao"));
+					    portes.add(porte);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static void ReadPelagem()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Especie_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    Pelagem pel = new Pelagem();
+					    pel.setId(rs.getInt("id"));
+					    pel.setDescricao(rs.getString("descricao"));
+					    pelagens.add(pel);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
 }

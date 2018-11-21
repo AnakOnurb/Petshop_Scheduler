@@ -137,6 +137,8 @@ public class MenuController implements Initializable
 		Utils.ReadRacas();
 		Utils.ReadDono();
 		Utils.ReadEspecie();
+		Utils.ReadPelagem();
+		Utils.ReadPorte();
 	}
 
 	public void loadContent(String file)

@@ -13,7 +13,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import pack.DAO.PetDAO;
+import pack.VO.Dono;
+import pack.VO.Especie;
+import pack.VO.Pelagem;
 import pack.VO.Pet;
+import pack.VO.Porte;
 import pack.VO.Raca;
 
 public class PetController implements Initializable
@@ -29,17 +33,17 @@ public class PetController implements Initializable
 	@FXML
 	private TextField txtObservacoes;
 	@FXML
-	private ComboBox<String> cboEspecie;
+	private ComboBox<Especie> cboEspecie;
 	@FXML
-	private ComboBox<String> cboPelagem;
+	private ComboBox<Pelagem> cboPelagem;
 	@FXML
 	private ComboBox<Raca> cboRaca;
 	@FXML
-	private ComboBox<String> cboPorte;
+	private ComboBox<Porte> cboPorte;
 	@FXML
-	private ComboBox<String> cboDonos;
+	private ComboBox<Dono> cboDonos;
 	@FXML
-	private ListView<String> lstDonos;
+	private ListView<Dono> lstDonos;
 	
 	
 	@FXML
@@ -121,10 +125,11 @@ public class PetController implements Initializable
 			txtId.setText(String.valueOf(pet.getId()));
 			txtNome.setText(pet.getNome());
 			txtIdade.setText(pet.getIdade());
-			cboEspecie.setValue(String.valueOf(pet.getEspecieId()));
-			cboPelagem.setValue(String.valueOf(pet.getPelagemId()));
+			cboEspecie.setValue(pet.getEspecieId());
+			//cboEspecie.setValue(String.valueOf(pet.getEspecieId()));
+			//cboPelagem.setValue(String.valueOf(pet.getPelagemId()));
 			//cboRaca.setValue(String.valueOf(pet.getRacaId()));
-			cboPorte.setValue(String.valueOf(pet.getPorteId()));
+			//cboPorte.setValue(String.valueOf(pet.getPorteId()));
 			txtObservacoes.setText(pet.getObservacoes());
 		}
 		populateComboBox();
@@ -132,11 +137,39 @@ public class PetController implements Initializable
 	
 	private void populateComboBox()
 	{
-		ObservableList<Raca> options = FXCollections.observableArrayList();
+		ObservableList<Raca> optionsraca = FXCollections.observableArrayList();
 		for(int i = 0; i < Utils.racas.size(); i++)
 		{	
-			options.add(Utils.racas.get(i));
+			optionsraca.add(Utils.racas.get(i));
 		}
-		cboRaca.setItems(options);
+		cboRaca.setItems(optionsraca);
+		
+		ObservableList<Especie> optionsespecie = FXCollections.observableArrayList();
+		for(int i = 0; i < Utils.especies.size(); i++)
+		{	
+			optionsespecie.add(Utils.especies.get(i));
+		}
+		cboEspecie.setItems(optionsespecie);
+		
+		ObservableList<Porte> optionsporte = FXCollections.observableArrayList();
+		for(int i = 0; i < Utils.portes.size(); i++)
+		{	
+			optionsporte.add(Utils.portes.get(i));
+		}
+		cboPorte.setItems(optionsporte);
+		
+		ObservableList<Pelagem> optionspelagem = FXCollections.observableArrayList();
+		for(int i = 0; i < Utils.pelagens.size(); i++)
+		{	
+			optionspelagem.add(Utils.pelagens.get(i));
+		}
+		cboPelagem.setItems(optionspelagem);
+		
+		ObservableList<Dono> optionsdonos = FXCollections.observableArrayList();
+		for(int i = 0; i < Utils.donos.size(); i++)
+		{	
+			optionsdonos.add(Utils.donos.get(i));
+		}
+		cboDonos.setItems(optionsdonos);
 	}
 }
