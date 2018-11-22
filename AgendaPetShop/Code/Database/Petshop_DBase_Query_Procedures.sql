@@ -563,9 +563,31 @@ AS BEGIN
 END
 GO
 
+CREATE PROCEDURE sp_raca_Read(
+	@id INT)
+AS BEGIN
+	IF(@id IS NOT NULL) BEGIN
+		IF(@id != -1) BEGIN
+			SELECT * FROM Raca WHERE id = @id
+		END
+	END
+END
+GO
+
 CREATE PROCEDURE sp_Pelagem_ReadSimple
 AS BEGIN
 	SELECT * FROM Pelagem
+END
+GO
+
+CREATE PROCEDURE sp_Pelagem_Read(
+	@id INT)
+AS BEGIN
+	IF(@id IS NOT NULL) BEGIN
+		IF(@id != -1) BEGIN
+			SELECT * FROM Pelagem WHERE id = @id
+		END
+	END
 END
 GO
 
@@ -575,9 +597,31 @@ AS BEGIN
 END
 GO
 
+CREATE PROCEDURE sp_Porte_Read(
+	@id INT)
+AS BEGIN
+	IF(@id IS NOT NULL) BEGIN
+		IF(@id != -1) BEGIN
+			SELECT * FROM Porte WHERE id = @id
+		END
+	END
+END
+GO
+
 CREATE PROCEDURE sp_Especie_ReadSimple
 AS BEGIN
 	SELECT * FROM Especie
+END
+GO
+
+CREATE PROCEDURE sp_Especie_Read(
+	@id INT)
+AS BEGIN
+	IF(@id IS NOT NULL) BEGIN
+		IF(@id != -1) BEGIN
+			SELECT * FROM Especie WHERE id = @id
+		END
+	END
 END
 GO
 

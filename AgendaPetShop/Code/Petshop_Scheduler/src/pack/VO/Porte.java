@@ -10,4 +10,10 @@ public class Porte
 	   
 	public String getDescricao() { return this.descricao; }
 	public void setDescricao(String descricao) { this.descricao = descricao; }
+	
+	@Override
+	public String toString() 
+	{
+	    return this.getDescricao();
+	}
 }

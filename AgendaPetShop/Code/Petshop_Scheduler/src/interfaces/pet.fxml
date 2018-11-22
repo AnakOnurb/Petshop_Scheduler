@@ -111,6 +111,11 @@
             <ComboBox fx:id="cboEspecie" layoutX="91.0" layoutY="149.0" prefHeight="32.0" prefWidth="238.0" />
             <ComboBox fx:id="cboPelagem" layoutX="92.0" layoutY="207.0" prefHeight="32.0" prefWidth="238.0" />
             <ComboBox fx:id="cboRaca" layoutX="514.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" />
+            <Button fx:id="btnRemove" layoutX="467.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnRemoveHandler" prefHeight="32.0" prefWidth="32.0" text="-">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

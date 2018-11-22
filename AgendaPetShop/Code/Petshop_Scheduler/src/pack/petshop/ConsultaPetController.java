@@ -87,6 +87,7 @@ public class ConsultaPetController implements Initializable
 			especieId = esp.getId();
 		}
 	}
+	
 	@FXML
 	protected void btnPesquisarHandler(ActionEvent event)
 	{
@@ -119,7 +120,7 @@ public class ConsultaPetController implements Initializable
 		{
 			Pet pet = new Pet();
 			pet = dtDados.getSelectionModel().getSelectedItem();
-			PetController.pet = pet;
+			PetController.receivedpet = pet;
 			
 			content.getChildren().clear();
 			try 
@@ -150,6 +151,11 @@ public class ConsultaPetController implements Initializable
 		cboDonos.getSelectionModel().clearSelection();
 		cboEspecie.getSelectionModel().clearSelection();
 		dtDados.getItems().clear();
+		id = -1; 
+		racaId = -1;
+		especieId = -1;
+		donoId = -1; 
+		String nome = ""; 
 	}
 	
 	@Override
