@@ -6,117 +6,122 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.petshop.DonoController">
    <children>
-      <AnchorPane layoutY="59.0" prefHeight="547.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="7.0" layoutY="1.0" prefHeight="547.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="30.0" layoutY="83.0" text="Nome:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtDono" layoutX="103.0" layoutY="78.0" prefHeight="32.0" prefWidth="654.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="txtCPF" layoutX="523.0" layoutY="24.0" prefHeight="32.0" prefWidth="238.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="462.0" layoutY="29.0" text="CPF:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtEndereco" layoutX="103.0" layoutY="131.0" prefHeight="32.0" prefWidth="654.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="14.0" layoutY="136.0" text="Endereço:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtTelefone" layoutX="103.0" layoutY="189.0" prefHeight="32.0" prefWidth="238.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="17.0" layoutY="194.0" text="Telefone:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtCelular" layoutX="519.0" layoutY="189.0" prefHeight="32.0" prefWidth="238.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </TextField>
-            <Label layoutX="446.0" layoutY="194.0" text="Celular:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="cboPets" layoutX="103.0" layoutY="240.0" prefHeight="32.0" prefWidth="238.0" />
-            <Label layoutX="19.0" layoutY="245.0" text="Pets:">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnAddPet" layoutX="466.0" layoutY="240.0" mnemonicParsing="false" onAction="#btnAddPetHandler" prefHeight="32.0" prefWidth="32.0" text="+">
+            <Button fx:id="btnAdd" layoutX="468.0" layoutY="207.0" mnemonicParsing="false" onAction="#btnAddHandler" prefHeight="32.0" prefWidth="32.0" text="+" AnchorPane.rightAnchor="280.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <ListView fx:id="lstPets" layoutX="519.0" layoutY="240.0" prefHeight="284.0" prefWidth="238.0" />
-            <TextField fx:id="txtObservacoes" layoutX="19.0" layoutY="324.0" prefHeight="200.0" prefWidth="313.0">
+            <ListView fx:id="lstPets" layoutX="414.0" layoutY="197.0" prefHeight="276.0" prefWidth="238.0" AnchorPane.bottomAnchor="64.0" AnchorPane.rightAnchor="26.0" />
+            <TextField fx:id="txtObservacoes" layoutX="14.0" layoutY="272.0" prefHeight="211.0" prefWidth="313.0" AnchorPane.bottomAnchor="64.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="272.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="19.0" layoutY="296.0" text="Observações:">
+            <Label layoutX="16.0" layoutY="249.0" text="Observações:">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnSalvar" layoutX="176.0" layoutY="542.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="113.0" text="SALVAR">
+            <Button fx:id="btnSalvar" layoutX="177.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="113.0" text="SALVAR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnAlterar" layoutX="353.0" layoutY="542.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="105.0" text="ALTERAR">
+            <Button fx:id="btnAlterar" layoutX="334.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="113.0" text="ALTERAR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnExcluir" layoutX="498.0" layoutY="542.0" mnemonicParsing="false" onAction="#btnExcluirHandler" prefHeight="32.0" prefWidth="113.0" text="EXCLUIR">
+            <Button fx:id="btnExcluir" layoutX="491.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnExcluirHandler" prefHeight="32.0" prefWidth="113.0" text="EXCLUIR" AnchorPane.bottomAnchor="16.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnNovo" layoutX="17.0" layoutY="542.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="113.0" text="NOVO">
+            <Button fx:id="btnNovo" layoutX="12.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="113.0" text="NOVO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnPesquisar" layoutX="644.0" layoutY="542.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="113.0" text="PESQUISAR">
+            <Button fx:id="btnPesquisar" layoutX="641.0" layoutY="499.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="113.0" text="PESQUISAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="txtDono1" layoutX="103.0" layoutY="24.0" prefHeight="32.0" prefWidth="238.0">
+            <Button fx:id="btnRemove" layoutX="468.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnRemoveHandler" prefHeight="32.0" prefWidth="32.0" text="-">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="40.0" layoutY="22.0" text="ID:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtId" layoutX="99.0" layoutY="17.0" prefHeight="32.0" prefWidth="238.0">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </TextField>
-            <Label layoutX="30.0" layoutY="29.0" text="ID:">
+            <Label layoutX="458.0" layoutY="22.0" text="CPF:">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
+            <TextField fx:id="txtCPF" layoutX="515.0" layoutY="17.0" prefHeight="32.0" prefWidth="238.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="26.0" layoutY="69.0" text="Nome:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNome" layoutX="99.0" layoutY="64.0" prefHeight="32.0" prefWidth="654.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="11.0" layoutY="117.0" text="Endereço:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtEndereco" layoutX="99.0" layoutY="112.0" prefHeight="32.0" prefWidth="654.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="21.0" layoutY="210.0" text="Celular:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCelular" layoutX="99.0" layoutY="205.0" prefHeight="32.0" prefWidth="238.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="164.0" text="Telefone:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTelefone" layoutX="99.0" layoutY="159.0" prefHeight="32.0" prefWidth="238.0">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="455.0" layoutY="164.0" text="Pets:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cboPets" layoutX="515.0" layoutY="159.0" prefHeight="32.0" prefWidth="238.0" />
          </children>
       </AnchorPane>
    </children>

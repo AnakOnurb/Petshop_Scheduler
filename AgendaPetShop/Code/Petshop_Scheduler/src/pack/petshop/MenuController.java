@@ -57,7 +57,23 @@ public class MenuController implements Initializable
 	protected void btnDonoHandler(ActionEvent event)
 	{
 		lblTitle.setText("Cadastro de Donos");
-		loadContent("dono.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/dono.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			DonoController controller = loader.<DonoController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML

@@ -116,7 +116,7 @@ public class ConsultaPetController implements Initializable
 	@FXML
 	protected void btnSelecionarHandler(ActionEvent event)
 	{
-		if(dtDados.getSelectionModel() != null)
+		if(dtDados.getSelectionModel().getSelectedItem() != null)
 		{
 			Pet pet = new Pet();
 			pet = dtDados.getSelectionModel().getSelectedItem();
@@ -140,6 +140,14 @@ public class ConsultaPetController implements Initializable
 				e.printStackTrace();
 			}
 		}
+		else
+		{
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Alerta!");
+			alert.setHeaderText("Seleção");
+			alert.setContentText("Não há dados selecionados!");
+			alert.showAndWait();
+		}
 	}
 	
 	@FXML
@@ -155,7 +163,7 @@ public class ConsultaPetController implements Initializable
 		racaId = -1;
 		especieId = -1;
 		donoId = -1; 
-		String nome = ""; 
+		nome = ""; 
 	}
 	
 	@Override

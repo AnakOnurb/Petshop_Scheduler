@@ -26,6 +26,7 @@ public class Utils
 	public static ArrayList<Raca> racas = new ArrayList<Raca>();
 	public static ArrayList<Especie> especies = new ArrayList<Especie>();
 	public static ArrayList<Dono> donos = new ArrayList<Dono>();
+	public static ArrayList<Pet> pets = new ArrayList<Pet>();
 	public static ArrayList<Porte> portes = new ArrayList<Porte>();
 	public static ArrayList<Pelagem> pelagens = new ArrayList<Pelagem>();
 	
@@ -279,6 +280,54 @@ public class Utils
 					    dono.setId(rs.getInt("id"));
 					    dono.setNome(rs.getString("nome"));
 					    donos.add(dono);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void ReadPet()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Pet_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    Pet pet = new Pet();
+					    pet.setId(rs.getInt("id"));
+					    pet.setNome(rs.getString("nome"));
+					    pets.add(pet);
 					}
 	                break;
 	            } 

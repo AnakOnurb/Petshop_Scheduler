@@ -195,6 +195,8 @@ END
 GO
 
 --DONO
+SELECT * FROM Dono
+
 CREATE PROCEDURE sp_Dono_Create(
 	@cpf VARCHAR(14),
 	@nome VARCHAR(70),
@@ -221,14 +223,14 @@ AS BEGIN
 	END
 	IF(@id IS NOT NULL) BEGIN
 		IF(@id != -1) BEGIN
-			SET @Condicao = @Condicao + ' p.id = ' + CAST(@id AS VARCHAR(MAX)) + ' AND'
+			SET @Condicao = @Condicao + ' d.id = ' + CAST(@id AS VARCHAR(MAX)) + ' AND'
 		END
 	END
 	IF(@nome IS NOT NULL) BEGIN
-		SET @Condicao = @Condicao + ' nome LIKE ''%' + @nome + '%''' + ' AND'
+		SET @Condicao = @Condicao + ' d.nome LIKE ''%' + @nome + '%''' + ' AND'
 	END
 	IF(@cpf IS NOT NULL) BEGIN
-		SET @Condicao = @Condicao + ' cpf = ' + @cpf + ' AND'
+		SET @Condicao = @Condicao + ' d.cpf LIKE ''%' + @cpf + '%''' + ' AND'
 	END
 	IF(@petId IS NOT NULL) BEGIN
 		IF(@petId != -1) BEGIN
@@ -242,7 +244,7 @@ AS BEGIN
 
 	DECLARE @Query VARCHAR(MAX)
 
-	SET @Query = 'SELECT d.id, d.cpf, d.nome, d.endereco, d.telefone, d.celular, d.observacoes FROM Pet p, Dono d, PetXDono pd' + @Condicao
+	SET @Query = 'SELECT d.id, d.cpf, d.nome, d.endereco, d.telefone, d.celular, d.observacoes FROM Dono d' + @Condicao
 	
 	EXEC (@Query)
 END

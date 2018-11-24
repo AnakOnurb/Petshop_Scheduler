@@ -8,6 +8,7 @@ import java.sql.Types;
 import java.util.ArrayList;
 
 import pack.VO.Dono;
+import pack.VO.Pet;
 import pack.petshop.DBConn;
 
 public class DonoDAO 
@@ -76,17 +77,19 @@ public class DonoDAO
 		return -1;
 	}
 	
-	public static ArrayList<Dono> Read(int id, String cpf, String nome, String endereco, String telefone, String celular, String observacoes)
+	public static ArrayList<Dono> Read(int id, String cpf, String nome, int petId)
 	{
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
         ResultSet rs = null;
+        ArrayList<Dono> donos = new ArrayList<Dono>();
 		try 
 		{
-			cstmt = conn.prepareCall("{call sp_Dono_Read(?, ?, ?)}");
+			cstmt = conn.prepareCall("{call sp_Dono_Read(?, ?, ?, ?)}");
 			cstmt.setInt ("id", id);
 			cstmt.setString ("cpf", cpf);
 			cstmt.setString ("nome", nome);
+			cstmt.setInt ("petId", petId);
 			boolean results = cstmt.execute();
 	        int rowsAffected = 0;
 	 
@@ -94,8 +97,17 @@ public class DonoDAO
 	        {
 	            if (results) 
 	            {
-	                rs = cstmt.getResultSet();
-	                break;
+	            	if (results) 
+		            {
+		                rs = cstmt.getResultSet();
+		                donos = ReadDonoSet(rs);
+		                break;
+		            } 
+		            else 
+		            {
+		                rowsAffected = cstmt.getUpdateCount();
+		            }
+		            results = cstmt.getMoreResults();
 	            } 
 	            else 
 	            {
@@ -113,14 +125,13 @@ public class DonoDAO
 			try 
 			{
 				conn.close();				
-		        return ReadDonoSet(rs);
 			} 
 			catch (SQLException e) 
 			{
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return donos;
 	}
 	
 	public static ArrayList<Dono> ReadSimple()
