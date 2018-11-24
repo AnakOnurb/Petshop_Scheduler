@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.petshop.ConsultaFuncionarioController">
    <children>
       <Label layoutX="19.0" layoutY="90.0" text="CPF:">
          <font>
@@ -43,17 +43,7 @@
             <Font name="Arial Black" size="14.0" />
          </font>
       </Button>
-      <TableView fx:id="dtDados" layoutX="14.0" layoutY="134.0" prefHeight="353.0" prefWidth="750.0">
-         <columns>
-            <TableColumn prefWidth="100.0" text="NOME" />
-            <TableColumn prefWidth="111.0" text="CPF" />
-            <TableColumn prefWidth="58.0" text="CÓDIGO" />
-            <TableColumn prefWidth="151.0" text="ENDEREÇO" />
-            <TableColumn prefWidth="82.0" text="CELULAR" />
-            <TableColumn prefWidth="91.0" text="SALÁRIO" />
-            <TableColumn prefWidth="156.0" text="OBSERVAÇÕES" />
-         </columns>
-      </TableView>
+      <TableView fx:id="dtDados" layoutX="14.0" layoutY="134.0" prefHeight="353.0" prefWidth="750.0" />
       <Button fx:id="btnPesquisar" layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
          <font>
             <Font name="Arial Black" size="14.0" />

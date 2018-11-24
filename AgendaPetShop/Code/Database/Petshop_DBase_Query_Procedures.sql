@@ -4,6 +4,8 @@ USE Petshop_DBase
 GO
 
 --FUNCIONARIOS
+SELECT * FROM Funcionario
+
 CREATE PROCEDURE sp_Funcionario_Create(
 	@cpf VARCHAR(14),
 	@nome VARCHAR(70),
@@ -37,7 +39,7 @@ AS BEGIN
 		SET @Condicao = @Condicao + ' nome LIKE ''%' + @nome + '%''' + ' AND'
 	END
 	IF(@cpf IS NOT NULL) BEGIN
-		SET @Condicao = @Condicao + ' cpf = ' + @cpf + ' AND'
+		SET @Condicao = @Condicao + ' cpf  LIKE ''%' + @cpf + '%''' + ' AND'
 	END
 
 	IF(@Id IS NOT NULL OR @nome IS NOT NULL OR @cpf IS NOT NULL) BEGIN

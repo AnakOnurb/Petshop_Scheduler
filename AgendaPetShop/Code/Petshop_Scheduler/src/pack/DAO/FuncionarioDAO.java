@@ -8,6 +8,7 @@ import java.sql.Types;
 import java.util.ArrayList;
 
 import pack.VO.Funcionario;
+import pack.VO.Pet;
 import pack.petshop.DBConn;
 
 public class FuncionarioDAO 
@@ -78,11 +79,12 @@ public class FuncionarioDAO
 		return -1;
 	}
 	
-	public static ArrayList<Funcionario> Read(int id, String cpf, String nome, String endereco, String telefone, String celular, String observacoes, double salario)
+	public static ArrayList<Funcionario> Read(int id, String cpf, String nome)
 	{
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
         ResultSet rs = null;
+        ArrayList<Funcionario> funcs = new ArrayList<Funcionario>();
 		try 
 		{
 			cstmt = conn.prepareCall("{call sp_Funcionario_Read(?, ?, ?)}");
@@ -97,6 +99,7 @@ public class FuncionarioDAO
 	            if (results) 
 	            {
 	                rs = cstmt.getResultSet();
+	                funcs = ReadFuncionarioSet(rs);
 	                break;
 	            } 
 	            else 
@@ -115,14 +118,13 @@ public class FuncionarioDAO
 			try 
 			{
 				conn.close();				
-		        return ReadFuncionarioSet(rs);
 			} 
 			catch (SQLException e) 
 			{
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return funcs;
 	}
 	
 	public static ArrayList<Funcionario> ReadSimple()

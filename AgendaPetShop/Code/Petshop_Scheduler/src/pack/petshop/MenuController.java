@@ -129,7 +129,23 @@ public class MenuController implements Initializable
 	protected void btnFuncionarioHandler(ActionEvent event) 
 	{
 		lblTitle.setText("Funcionários");
-		loadContent("funcionario.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/funcionario.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			FuncionarioController controller = loader.<FuncionarioController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
