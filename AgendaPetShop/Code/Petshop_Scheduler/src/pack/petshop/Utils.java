@@ -16,10 +16,12 @@ import javax.crypto.spec.PBEKeySpec;
 
 import pack.VO.Dono;
 import pack.VO.Especie;
+import pack.VO.Funcionario;
 import pack.VO.Pelagem;
 import pack.VO.Pet;
 import pack.VO.Porte;
 import pack.VO.Raca;
+import pack.VO.Servico;
 
 public class Utils 
 {
@@ -29,6 +31,8 @@ public class Utils
 	public static ArrayList<Pet> pets = new ArrayList<Pet>();
 	public static ArrayList<Porte> portes = new ArrayList<Porte>();
 	public static ArrayList<Pelagem> pelagens = new ArrayList<Pelagem>();
+	public static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+	public static ArrayList<Servico> servicos = new ArrayList<Servico>();
 	
 	private static byte[] Encrypt(String data)
 	{
@@ -306,6 +310,61 @@ public class Utils
 			}
 		}
 	}
+
+	public static Dono ReadDono(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Dono> donos = new ArrayList<Dono>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Dono_Read(?, ?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setString ("cpf", "");
+			cstmt.setString ("nome", "");
+			cstmt.setInt ("petId", -1);
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                while (rs.next()) 
+	    			{
+	    			    Dono dono = new Dono();
+	    			    dono.setId(rs.getInt("id"));
+	    			    dono.setNome(rs.getString("nome"));
+	    			    donos.add(dono);
+	    			}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return donos.get(0);
+	}
 	
 	public static void ReadPet()
 	{
@@ -353,6 +412,165 @@ public class Utils
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public static Pet ReadPet(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Pet> pets = new ArrayList<Pet>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Pet_Read(?, ?, ?, ?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setString ("nome", "");
+			cstmt.setInt ("especieId", -1);
+			cstmt.setInt ("racaId", -1);
+			cstmt.setInt ("porteId", -1);
+			cstmt.setInt ("donoId", -1);
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                while (rs.next()) 
+	    			{
+	    			    Pet pet = new Pet();
+	    			    pet.setId(rs.getInt("id"));
+	    			    pet.setNome(rs.getString("nome"));
+	    			    pets.add(pet);
+	    			}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return pets.get(0);
+	}
+
+	public static void ReadFuncionario()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Funcionario_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    Funcionario func = new Funcionario();
+					    func.setId(rs.getInt("id"));
+					    func.setNome(rs.getString("nome"));
+					    funcionarios.add(func);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static Funcionario ReadFuncionario(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Funcionario_Read(?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setString ("cpf", "");
+			cstmt.setString ("nome", "");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                while (rs.next()) 
+	    			{
+	    			    Funcionario func = new Funcionario();
+	    			    func.setId(rs.getInt("id"));
+	    			    func.setNome(rs.getString("nome"));
+	    			    funcionarios.add(func);
+	    			}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return funcionarios.get(0);
 	}
 
 	public static void ReadPorte()
@@ -554,4 +772,108 @@ public class Utils
 		}
 		return pelagens.get(0);
 	}
+
+	public static void ReadServico()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Servico_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    Servico servico = new Servico();
+					    servico.setId(rs.getInt("id"));
+					    servico.setDescricao(rs.getString("descricao"));
+					    servicos.add(servico);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static Servico ReadServico(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Servico> servicos = new ArrayList<Servico>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Servico_Read(?, ?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setString ("descricao", "");
+			cstmt.setDouble ("preco", -1);
+			cstmt.setInt ("duracao", -1);
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                while (rs.next()) 
+	    			{
+	    			    Servico servico = new Servico();
+	    			    servico.setId(rs.getInt("id"));
+	    			    servico.setDescricao(rs.getString("descricao"));
+	    			    servicos.add(servico);
+	    			}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return servicos.get(0);
+	}
+
 }

@@ -166,7 +166,7 @@ public class MenuConsultaController implements Initializable
 			content.getChildren().clear();
 			try 
 			{
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/menucadastros.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/menucadastro.fxml"));
 				Pane newLoadedPane = (Pane) loader.load();
 
 				MenuCadastroController controller = loader.<MenuCadastroController>getController();
@@ -174,7 +174,7 @@ public class MenuConsultaController implements Initializable
 				
 				content.setPrefSize(780, 547);
 				content.getChildren().add(newLoadedPane);
-				title.setText("Cadastros");
+				
 			} 
 			catch(Exception e) 
 			{
@@ -203,7 +203,7 @@ public class MenuConsultaController implements Initializable
 			content.getChildren().clear();
 			try 
 			{
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/menucadastros.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/menucadastro.fxml"));
 				Pane newLoadedPane = (Pane) loader.load();
 
 				MenuCadastroController controller = loader.<MenuCadastroController>getController();
@@ -211,7 +211,7 @@ public class MenuConsultaController implements Initializable
 				
 				content.setPrefSize(780, 547);
 				content.getChildren().add(newLoadedPane);
-				title.setText("Cadastros");
+				
 			} 
 			catch(Exception e) 
 			{
@@ -271,7 +271,7 @@ public class MenuConsultaController implements Initializable
 		TableColumn duracaoServicoCol = new TableColumn("Duração");
 		duracaoServicoCol.setCellValueFactory(new PropertyValueFactory<>("duracao"));
 		
-		dtDadosServico.getColumns().addAll(idPacoteCol, descPacoteCol, precoServicoCol, duracaoServicoCol);
+		dtDadosServico.getColumns().addAll(idServicoCol, descServicoCol, precoServicoCol, duracaoServicoCol);
 		
 	}
 }

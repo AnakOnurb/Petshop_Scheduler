@@ -111,9 +111,9 @@ CREATE TABLE Agendamento
 	data DATE NOT NULL,
 	horario TIME NOT NULL,
 	servicoId INT NOT NULL REFERENCES Servico(id),
-	funcionarioId INT NOT NULL REFERENCES Funcionario(id),
-	pacoteId INT REFERENCES Pacote(id),
-	pagamentoId INT REFERENCES Pagamento(id),
+	funcionarioId INT NULL REFERENCES Funcionario(id),
+	pacoteId INT NULL REFERENCES Pacote(id),
+	pagamentoId INT NULL REFERENCES Pagamento(id),
 	cancelado BIT NOT NULL
 )
 

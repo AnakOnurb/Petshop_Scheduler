@@ -517,21 +517,32 @@ END
 GO
 
 --AGENDAMENTO
+select * from Agendamento
+
 CREATE PROCEDURE sp_Agendamento_Create(
 	@petId INT,
 	@data DATE,
 	@horario TIME,
 	@servicoId INT,
 	@funcionarioId INT,
-	@pacoteId INT,
-	@pagamentoId INT,
-	@cancelado BIT)
+	@pacoteId INT)
 AS BEGIN
-	INSERT INTO Agendamento (petId, data, horario, servicoId, funcionarioId, pacoteId, pagamentoId, cancelado) 
-					 VALUES (@petId, @data, @horario, @servicoId, @funcionarioId, @pacoteId, @pagamentoId, @cancelado)
+	IF (@pacoteId <= 0) BEGIN
+		SET @pacoteId = NULL
+	END
+	IF (@funcionarioId <= 0) BEGIN
+		SET @funcionarioId = NULL
+	END
+	INSERT INTO Agendamento (petId, data, horario, servicoId, funcionarioId, pacoteId, cancelado) 
+						 VALUES (@petId, @data, @horario, @servicoId, @funcionarioId, @pacoteId, 0)
 	RETURN @@IDENTITY
 END
 GO
+
+CREATE PROCEDURE sp_Agendamento_ReadAtivo
+AS BEGIN
+	SELECT * FROM Agendamento WHERE pagamentoId IS NULL AND cancelado != 1
+END
 
 CREATE PROCEDURE sp_Agendamento_ReadSimple
 AS BEGIN
@@ -546,12 +557,10 @@ CREATE PROCEDURE sp_Agendamento_Update (
 	@horario TIME,
 	@servicoId INT,
 	@funcionarioId INT,
-	@pacoteId INT,
-	@pagamentoId INT,
-	@cancelado BIT)
+	@pacoteId INT)
 AS BEGIN
 	UPDATE Agendamento SET petId = @petId, data = @data, horario = @horario, servicoId = @servicoId, funcionarioId = @funcionarioId,
-						   pacoteId = @pacoteId, pagamentoId = @pagamentoId, cancelado = @cancelado WHERE id = @id
+						   pacoteId = @pacoteId WHERE id = @id
 END
 GO
 
@@ -562,6 +571,13 @@ AS BEGIN
 END
 GO
 
+CREATE PROCEDURE sp_Agendamento_Desmarcar (
+    @id INT)
+AS BEGIN
+	UPDATE Agendamento SET cancelado = 1 WHERE id = @id
+END
+GO
+
 --READSIMPLE PARA COMBOBOX
 CREATE PROCEDURE sp_Raca_ReadSimple
 AS BEGIN
@@ -569,7 +585,7 @@ AS BEGIN
 END
 GO
 
-CREATE PROCEDURE sp_raca_Read(
+CREATE PROCEDURE sp_Raca_Read(
 	@id INT)
 AS BEGIN
 	IF(@id IS NOT NULL) BEGIN

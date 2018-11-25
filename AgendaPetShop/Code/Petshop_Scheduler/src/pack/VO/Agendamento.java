@@ -1,14 +1,15 @@
 package pack.VO;
 
+import java.sql.Time;
 import java.time.LocalTime;
-import java.util.Date;
+import java.sql.Date;
 
 public class Agendamento 
 {
 	private int id;
 	private int petId;
 	private Date data;
-	private LocalTime horario;
+	private Time horario;
 	private int servicoId;
 	private int funcionarioId;
 	private int pacoteId;
@@ -24,8 +25,8 @@ public class Agendamento
 	public Date getData() { return this.data; }
 	public void setData(Date data) { this.data = data; }
 	
-	public LocalTime getHorario() { return this.horario; }
-	public void setHorario(LocalTime horario) { this.horario = horario; }
+	public Time getHorario() { return this.horario; }
+	public void setHorario(Time horario) { this.horario = horario; }
     
 	public int getServicoId() { return this.servicoId; }
 	public void setServicoId(int servicoId) { this.servicoId = servicoId; }

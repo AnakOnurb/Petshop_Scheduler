@@ -18,4 +18,10 @@ public class Servico
     
     public int getDuracao() { return this.duracao; }
 	public void setDuracao(int duracao) { this.duracao = duracao; }
+	
+	@Override
+	public String toString() 
+	{
+	    return this.getDescricao();
+	}
 }

@@ -87,7 +87,23 @@ public class MenuController implements Initializable
 	protected void btnAgendamentoHandler(ActionEvent event)
 	{
 		lblTitle.setText("Agendamentos");
-		loadContent("agendamento.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/agendamento.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			AgendamentoController controller = loader.<AgendamentoController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
@@ -187,6 +203,9 @@ public class MenuController implements Initializable
 		Utils.ReadEspecie();
 		Utils.ReadPelagem();
 		Utils.ReadPorte();
+		Utils.ReadPet();
+		Utils.ReadFuncionario();
+		Utils.ReadServico();
 	}
 
 	public void loadContent(String file)

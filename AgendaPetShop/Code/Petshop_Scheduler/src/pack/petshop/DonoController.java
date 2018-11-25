@@ -241,6 +241,8 @@ public class DonoController implements Initializable
 		txtCelular.setStyle("-fx-opacity: 1;");
 		txtObservacoes.setDisable(false);
 		txtObservacoes.setStyle("-fx-opacity: 1;");
+		cboPets.setDisable(false);
+		cboPets.setStyle("-fx-opacity: 1;");
 		btnAdd.setDisable(false);
 		btnRemove.setDisable(false);
 	}
@@ -261,6 +263,8 @@ public class DonoController implements Initializable
 		txtCelular.setStyle("-fx-opacity: 1;");
 		txtObservacoes.setDisable(true);
 		txtObservacoes.setStyle("-fx-opacity: 1;");
+		cboPets.setDisable(true);
+		cboPets.setStyle("-fx-opacity: 1;");
 		btnAdd.setDisable(true);
 		btnRemove.setDisable(true);
 	}
@@ -302,7 +306,6 @@ public class DonoController implements Initializable
 		txtCelular.setText("");
 		txtObservacoes.setText("");
 		cboPets.getSelectionModel().clearSelection();
-		cboPets.setValue(null);
 		lstPets.getItems().clear();
 	}
 	

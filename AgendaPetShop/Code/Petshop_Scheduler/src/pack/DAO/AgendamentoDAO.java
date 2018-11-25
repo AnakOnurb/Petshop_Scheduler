@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 
 import pack.VO.Agendamento;
+import pack.VO.Pet;
 import pack.petshop.DBConn;
 
 public class AgendamentoDAO 
@@ -45,22 +46,20 @@ public class AgendamentoDAO
 		return Agendamentos;
 	}
 	
-	public static int Create(int petId, Date data, Time horario, int servicoId, int funcionarioId, int pacoteId, int pagamentoId, boolean cancelado)
+	public static int Create(int petId, Date data, Time horario, int servicoId, int funcionarioId, int pacoteId)
 	{
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
 		int returnValue = -1;
 		try 
 		{
-			cstmt = conn.prepareCall("{? = call sp_Agendamento_Create(?, ?, ?, ?, ?, ?, ?, ?)}");
+			cstmt = conn.prepareCall("{? = call sp_Agendamento_Create(?, ?, ?, ?, ?, ?)}");
 			cstmt.setInt ("petId", petId);
             cstmt.setDate ("data", data);
             cstmt.setTime ("horario", horario);
             cstmt.setInt ("servicoId", servicoId);
             cstmt.setInt ("funcionarioId", funcionarioId);
             cstmt.setInt ("pacoteId", pacoteId);
-            cstmt.setInt ("pagamentoId", pagamentoId);
-            cstmt.setBoolean ("cancelado", cancelado);
             cstmt.registerOutParameter(1, Types.INTEGER);
             cstmt.execute();
             returnValue = cstmt.getInt(1);
@@ -128,14 +127,59 @@ public class AgendamentoDAO
 		return null;
 	}
 	
-	public static int Update(int id, int petId, Date data, Time horario, int servicoId, int funcionarioId, int pacoteId, int pagamentoId, boolean cancelado)
+	public static ArrayList<Agendamento> ReadAtivo()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Agendamento_ReadAtivo()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                agendamentos = ReadAgendamentoSet(rs);
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return agendamentos;
+	}
+	
+	public static int Update(int id, int petId, Date data, Time horario, int servicoId, int funcionarioId, int pacoteId)
 	{
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
 		boolean results = false;
 		try 
 		{
-			cstmt = conn.prepareCall("{call sp_Agendamento_Update(?, ?, ?, ?, ?, ?, ?, ?, ?)}");
+			cstmt = conn.prepareCall("{call sp_Agendamento_Update(?, ?, ?, ?, ?, ?, ?)}");
 			cstmt.setInt ("id", id);
 			cstmt.setInt ("petId", petId);
             cstmt.setDate ("data", data);
@@ -143,8 +187,6 @@ public class AgendamentoDAO
             cstmt.setInt ("servicoId", servicoId);
             cstmt.setInt ("funcionarioId", funcionarioId);
             cstmt.setInt ("pacoteId", pacoteId);
-            cstmt.setInt ("pagamentoId", pagamentoId);
-            cstmt.setBoolean ("cancelado", cancelado);
             results = cstmt.execute();
 		} 
 		catch (SQLException e) 
@@ -175,6 +217,37 @@ public class AgendamentoDAO
 		try 
 		{
 			cstmt = conn.prepareCall("{call sp_Agendamento_Delete(?)}");
+			cstmt.setInt("id", id);
+            results = cstmt.execute();
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();
+				if(results)
+					return 1;
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	public static int Desmarcar(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+		boolean results = false;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Agendamento_Desmarcar(?)}");
 			cstmt.setInt("id", id);
             results = cstmt.execute();
 		} 

@@ -34,4 +34,10 @@ public class Pet
     
     public String getObservacoes() { return this.observacoes; }
     public void setObservacoes(String obs) { this.observacoes = obs; }
+    
+	@Override
+	public String toString() 
+	{
+	    return this.getNome();
+	}
 }

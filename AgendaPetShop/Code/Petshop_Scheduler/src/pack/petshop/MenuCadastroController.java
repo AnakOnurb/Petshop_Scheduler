@@ -545,6 +545,7 @@ public class MenuCadastroController implements Initializable
 		btnSalvarPacote.setDisable(true);
 		btnSalvarServico.setDisable(true);
 		checkReceivedPacote();
+		checkReceivedServico();
 		
 		UpdateORDeletePacote();
 		UpdateORDeleteServico();
