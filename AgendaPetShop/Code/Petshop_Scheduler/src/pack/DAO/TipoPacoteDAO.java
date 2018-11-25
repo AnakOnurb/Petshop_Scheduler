@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 
+import pack.VO.Servico;
 import pack.VO.TipoPacote;
 import pack.petshop.DBConn;
 
@@ -71,6 +72,7 @@ public class TipoPacoteDAO
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
 		ResultSet rs = null;
+		ArrayList<TipoPacote> pacotes = new ArrayList<TipoPacote>();
 		try 
 		{
 			cstmt = conn.prepareCall("{call sp_TipoPacote_Read(?, ?)}");
@@ -84,6 +86,7 @@ public class TipoPacoteDAO
 				if (results) 
 				{
 					rs = cstmt.getResultSet();
+					pacotes = ReadTipoPacoteSet(rs);
 					break;
 				} 
 				else 
@@ -102,14 +105,13 @@ public class TipoPacoteDAO
 			try 
 			{
 				conn.close();				
-				return ReadTipoPacoteSet(rs);
 			} 
 			catch (SQLException e) 
 			{
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return pacotes;
 	}
 	
 	public static ArrayList<TipoPacote> ReadSimple()

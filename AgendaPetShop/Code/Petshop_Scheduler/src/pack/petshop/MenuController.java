@@ -122,7 +122,23 @@ public class MenuController implements Initializable
 	protected void btnCadastroHandler(ActionEvent event)
 	{
 		lblTitle.setText("Cadastros");
-		loadContent("menucadastro.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/menucadastro.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			MenuCadastroController controller = loader.<MenuCadastroController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML

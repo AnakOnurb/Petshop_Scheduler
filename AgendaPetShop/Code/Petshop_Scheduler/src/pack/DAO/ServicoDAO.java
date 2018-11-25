@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 
+import pack.VO.Pet;
 import pack.VO.Servico;
 import pack.petshop.DBConn;
 
@@ -70,18 +71,19 @@ public class ServicoDAO
 		return -1;
 	}
 	
-	public static ArrayList<Servico> Read(int id, String descricao, double preco, int duracao)
+	public static ArrayList<Servico> Read(int id, String descricao)
 	{
 		Connection conn = DBConn.getConnection();
 		CallableStatement cstmt = null;
 		ResultSet rs = null;
+		ArrayList<Servico> servicos = new ArrayList<Servico>();
 		try 
 		{
 			cstmt = conn.prepareCall("{call sp_Servico_Read(?, ?, ?, ?)}");
 			cstmt.setInt ("id", id);
 			cstmt.setString ("descricao", descricao);
-			cstmt.setDouble ("preco", preco);
-			cstmt.setInt ("duracao", duracao);
+			cstmt.setDouble ("preco", -1);
+			cstmt.setInt ("duracao", -1);
 			boolean results = cstmt.execute();
 			int rowsAffected = 0;
 	 
@@ -90,6 +92,7 @@ public class ServicoDAO
 				if (results) 
 				{
 					rs = cstmt.getResultSet();
+					servicos = ReadServicoSet(rs);
 					break;
 				} 
 				else 
@@ -108,14 +111,13 @@ public class ServicoDAO
 			try 
 			{
 				conn.close();				
-				return ReadServicoSet(rs);
 			} 
 			catch (SQLException e) 
 			{
 				e.printStackTrace();
 			}
 		}
-		return null;
+		return servicos;
 	}
 	
 	public static ArrayList<Servico> ReadSimple()

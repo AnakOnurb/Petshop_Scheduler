@@ -309,10 +309,12 @@ AS BEGIN
 		SET @Condicao = @Condicao + ' descricao LIKE ''%' + @descricao + '%''' + ' AND'
 	END
 	IF(@preco IS NOT NULL) BEGIN
-		SET @Condicao = @Condicao + ' preco = ' + CAST(@preco AS VARCHAR(MAX)) + ' AND'
+		IF(@preco > 0) BEGIN
+			SET @Condicao = @Condicao + ' preco = ' + CAST(@preco AS VARCHAR(MAX)) + ' AND'
+		END
 	END
 	IF(@duracao IS NOT NULL) BEGIN
-		IF(@id != -1) BEGIN
+		IF(@duracao > 0) BEGIN
 			SET @Condicao = @Condicao + ' duracao = ' + CAST(@duracao AS VARCHAR(MAX)) + ' AND'
 		END
 	END

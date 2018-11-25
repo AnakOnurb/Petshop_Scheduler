@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.petshop.MenuCadastroController">
    <children>
       <AnchorPane layoutX="7.0" layoutY="1.0" prefHeight="547.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -60,7 +60,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnNovoPacote" layoutX="17.0" layoutY="456.0" mnemonicParsing="false" onAction="#btnNovoPacoteHandler" prefHeight="32.0" prefWidth="120.0" text="NOVO">
+            <Button fx:id="btnNovoPacote" layoutX="15.0" layoutY="456.0" mnemonicParsing="false" onAction="#btnNovoPacoteHandler" prefHeight="32.0" prefWidth="120.0" text="NOVO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -70,7 +70,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnAlterarPacote" layoutX="17.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnAlterarPacoteHandler" prefHeight="32.0" prefWidth="120.0" text="ALTERAR">
+            <Button fx:id="btnAlterarPacote" layoutX="15.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnAlterarPacoteHandler" prefHeight="32.0" prefWidth="120.0" text="ALTERAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -95,7 +95,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnAlterarServico" layoutX="478.0" layoutY="502.0" mnemonicParsing="false" onAction="#btnAlterarServicoHandler" prefHeight="32.0" prefWidth="120.0" text="ALTERAR">
+            <Button fx:id="btnAlterarServico" layoutX="476.0" layoutY="502.0" mnemonicParsing="false" onAction="#btnAlterarServicoHandler" prefHeight="32.0" prefWidth="120.0" text="ALTERAR">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
@@ -105,7 +105,7 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnNovoServico" layoutX="478.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnNovoServicoHandler" prefHeight="32.0" prefWidth="120.0" text="NOVO">
+            <Button fx:id="btnNovoServico" layoutX="476.0" layoutY="457.0" mnemonicParsing="false" onAction="#btnNovoServicoHandler" prefHeight="32.0" prefWidth="120.0" text="NOVO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>

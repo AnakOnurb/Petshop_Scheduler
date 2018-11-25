@@ -291,7 +291,7 @@ public class FuncionarioController implements Initializable
 			retorno = false;
 		if(func.getCelular() == null || func.getCelular().equals(""))
 			retorno = false;
-		if(func.getSalario() < 0 || func.getSalario() < 0)
+		if(func.getSalario() < 0)
 			retorno = false;
 		return retorno;
 	}
