@@ -544,11 +544,17 @@ AS BEGIN
 	SELECT * FROM Agendamento WHERE pagamentoId IS NULL AND cancelado != 1
 END
 
+
 CREATE PROCEDURE sp_Agendamento_ReadSimple
 AS BEGIN
 	SELECT * FROM Agendamento
 END
 GO
+
+CREATE PROCEDURE sp_Agendamento_ReadPendente
+AS BEGIN
+	SELECT * FROM Agendamento WHERE (pagamentoId IS NULL OR pagamentoId = 0) AND cancelado != 1
+END
 
 CREATE PROCEDURE sp_Agendamento_Update (
 	@id INT,
@@ -575,6 +581,18 @@ CREATE PROCEDURE sp_Agendamento_Desmarcar (
     @id INT)
 AS BEGIN
 	UPDATE Agendamento SET cancelado = 1 WHERE id = @id
+END
+GO
+
+CREATE PROCEDURE sp_Agendamento_Pagar (
+    @id INT,
+	@data DATE,
+	@tipoId INT)
+AS BEGIN
+	DECLARE @inserted INT
+	INSERT INTO Pagamento VALUES (@data, @tipoId)
+	SET @inserted = @@IDENTITY
+	UPDATE Agendamento SET pagamentoId = @inserted WHERE id = @id
 END
 GO
 
@@ -647,8 +665,22 @@ AS BEGIN
 END
 GO
 
+INSERT INTO TipoPagamento VALUES ('Débito')
+INSERT INTO TipoPagamento VALUES ('Crédito')
+INSERT INTO TipoPagamento VALUES ('Dinheiro')
 CREATE PROCEDURE sp_TipoPagamento_ReadSimple
 AS BEGIN
 	SELECT * FROM TipoPagamento
+END
+GO
+
+CREATE PROCEDURE sp_TipoPagamento_Read(
+	@id INT)
+AS BEGIN
+	IF(@id IS NOT NULL) BEGIN
+		IF(@id != -1) BEGIN
+			SELECT * FROM TipoPagamento WHERE id = @id
+		END
+	END
 END
 GO

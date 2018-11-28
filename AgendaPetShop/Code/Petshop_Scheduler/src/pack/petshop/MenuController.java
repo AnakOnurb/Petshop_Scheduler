@@ -2,6 +2,8 @@ package pack.petshop;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -9,11 +11,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
 import pack.DAO.PetDAO;
 
 public class MenuController implements Initializable
 {	
+	@FXML
+	private Label lblData;
 	@FXML
 	private Label lblTitle;
 	
@@ -28,6 +33,8 @@ public class MenuController implements Initializable
 	{
 		lblTitle.setText("Menu Inicial");
 		loadContent("inicial.fxml");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		lblData.setText(String.valueOf(LocalDateTime.now().format(formatter)));
 	}
 	
 	@FXML
@@ -49,7 +56,11 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 	
@@ -72,7 +83,11 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 	
@@ -102,29 +117,93 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 	
 	@FXML
 	protected void btnPacoteHandler(ActionEvent event)
 	{
-		lblTitle.setText("Cadastro de Pacotes");
-		loadContent("pacote.fxml");
+		lblTitle.setText("Pacotes");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/pacote.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			PacoteController controller = loader.<PacoteController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
+		}
 	}
 	
 	@FXML
 	protected void btnPagamentoHandler(ActionEvent event)
 	{
 		lblTitle.setText("Pagamentos");
-		loadContent("pagamento.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/pagamento.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			PagamentoController controller = loader.<PagamentoController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
+		}
 	}
 	
 	@FXML
 	protected void btnPendenciaHandler(ActionEvent event)
 	{
 		lblTitle.setText("Pendências");
-		loadContent("pendencia.fxml");
+		pnlContent.getChildren().clear();
+		try 
+		{
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/interfaces/pendencia.fxml"));
+			Pane newLoadedPane = (Pane) loader.load();
+
+			PendenciaController controller = loader.<PendenciaController>getController();
+			controller.InitData(pnlContent, lblTitle);
+			
+			pnlContent.setPrefSize(780, 547);
+			pnlContent.getChildren().add(newLoadedPane);
+			
+		} 
+		catch(Exception e) 
+		{
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
+		}
 	}
 	
 	@FXML
@@ -153,7 +232,11 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 	
@@ -176,7 +259,11 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 	
@@ -197,6 +284,7 @@ public class MenuController implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
+		
 		btnMenu.fire();
 		Utils.ReadRacas();
 		Utils.ReadDono();
@@ -206,6 +294,7 @@ public class MenuController implements Initializable
 		Utils.ReadPet();
 		Utils.ReadFuncionario();
 		Utils.ReadServico();
+		Utils.ReadTipoPagamento();
 	}
 
 	public void loadContent(String file)
@@ -220,7 +309,11 @@ public class MenuController implements Initializable
 		} 
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Exibição");
+			alert.setHeaderText("Falha no carregamento");
+			alert.setContentText("Não foi possível carregar a tela");
+			alert.showAndWait();
 		}
 	}
 }

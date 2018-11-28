@@ -22,6 +22,7 @@ import pack.VO.Pet;
 import pack.VO.Porte;
 import pack.VO.Raca;
 import pack.VO.Servico;
+import pack.VO.TipoPagamento;
 
 public class Utils 
 {
@@ -33,6 +34,7 @@ public class Utils
 	public static ArrayList<Pelagem> pelagens = new ArrayList<Pelagem>();
 	public static ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 	public static ArrayList<Servico> servicos = new ArrayList<Servico>();
+	public static ArrayList<TipoPagamento> pagamentos = new ArrayList<TipoPagamento>();
 	
 	private static byte[] Encrypt(String data)
 	{
@@ -876,4 +878,106 @@ public class Utils
 		return servicos.get(0);
 	}
 
+	public static void ReadTipoPagamento()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_TipoPagamento_ReadSimple()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+		            while (rs.next()) 
+					{
+					    TipoPagamento pgto = new TipoPagamento();
+					    pgto.setId(rs.getInt("id"));
+					    pgto.setDescricao((rs.getString("descricao")));
+					    pagamentos.add(pgto);
+					}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public static TipoPagamento ReadTipoPagamento(int id)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<TipoPagamento> pagamentos = new ArrayList<TipoPagamento>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Dono_Read(?, ?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setString ("cpf", "");
+			cstmt.setString ("nome", "");
+			cstmt.setInt ("petId", -1);
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                while (rs.next()) 
+	    			{
+	                	TipoPagamento pagto = new TipoPagamento();
+	                	pagto.setId(rs.getInt("id"));
+	                	pagto.setDescricao(rs.getString("descricao"));
+	    			    pagamentos.add(pagto);
+	    			}
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();	
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return pagamentos.get(0);
+	}
 }

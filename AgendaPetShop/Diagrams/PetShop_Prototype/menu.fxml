@@ -20,11 +20,6 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="lblData" layoutX="785.0" layoutY="17.0" prefHeight="22.0" prefWidth="101.0">
-               <font>
-                  <Font name="Arial Black" size="14.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
       <VBox layoutX="780.0" layoutY="53.0" prefHeight="547.0" prefWidth="120.0" style="-fx-border-color: black; -fx-border-style: solid none none solid;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">

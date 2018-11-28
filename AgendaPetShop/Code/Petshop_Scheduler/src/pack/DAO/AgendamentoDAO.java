@@ -13,6 +13,7 @@ import java.sql.Date;
 
 import pack.VO.Agendamento;
 import pack.VO.Pet;
+import pack.VO.TipoPagamento;
 import pack.petshop.DBConn;
 
 public class AgendamentoDAO 
@@ -172,6 +173,51 @@ public class AgendamentoDAO
 		return agendamentos;
 	}
 	
+	public static ArrayList<Agendamento> ReadPendente()
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+        ResultSet rs = null;
+        ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Agendamento_ReadPendente()}");
+			boolean results = cstmt.execute();
+	        int rowsAffected = 0;
+	 
+	        while (results || rowsAffected != -1) 
+	        {
+	            if (results) 
+	            {
+	                rs = cstmt.getResultSet();
+	                agendamentos = ReadAgendamentoSet(rs);
+	                break;
+	            } 
+	            else 
+	            {
+	                rowsAffected = cstmt.getUpdateCount();
+	            }
+	            results = cstmt.getMoreResults();
+	        }
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();				
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return agendamentos;
+	}
+	
 	public static int Update(int id, int petId, Date data, Time horario, int servicoId, int funcionarioId, int pacoteId)
 	{
 		Connection conn = DBConn.getConnection();
@@ -249,6 +295,39 @@ public class AgendamentoDAO
 		{
 			cstmt = conn.prepareCall("{call sp_Agendamento_Desmarcar(?)}");
 			cstmt.setInt("id", id);
+            results = cstmt.execute();
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally 
+		{
+			try 
+			{
+				conn.close();
+				if(results)
+					return 1;
+			} 
+			catch (SQLException e) 
+			{
+				e.printStackTrace();
+			}
+		}
+		return -1;
+	}
+	
+	public static int Pagar(int id, Date data, int tipoId)
+	{
+		Connection conn = DBConn.getConnection();
+		CallableStatement cstmt = null;
+		boolean results = false;
+		try 
+		{
+			cstmt = conn.prepareCall("{call sp_Agendamento_Pagar(?, ?, ?)}");
+			cstmt.setInt ("id", id);
+			cstmt.setDate ("data", data);
+			cstmt.setInt("tipoId", tipoId);
             results = cstmt.execute();
 		} 
 		catch (SQLException e) 

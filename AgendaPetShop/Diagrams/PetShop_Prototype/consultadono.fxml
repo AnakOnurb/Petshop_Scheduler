@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.petshop.ConsultaDonoController">
+   <children>
+      <Label layoutX="19.0" layoutY="93.0" text="CPF:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCPF" layoutX="88.0" layoutY="88.0" prefHeight="32.0" prefWidth="338.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtNome" layoutX="88.0" layoutY="37.0" prefHeight="32.0" prefWidth="338.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="19.0" layoutY="42.0" text="Nome:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSelecionar" layoutX="325.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnSelecionarHandler" prefHeight="32.0" prefWidth="131.0" text="SELECIONAR">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <TableView fx:id="dtDados" layoutX="16.0" layoutY="143.0" prefHeight="351.0" prefWidth="748.0" />
+      <Button fx:id="btnPesquisar" layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnPesquisarHandler" prefHeight="32.0" prefWidth="131.0" text="PESQUISAR ">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLimpar" layoutX="635.0" layoutY="501.0" mnemonicParsing="false" onAction="#btnLimparHandler" prefHeight="32.0" prefWidth="131.0" text="LIMPAR">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="456.0" layoutY="93.0" text="Pets:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cboPets" layoutX="527.0" layoutY="88.0" prefHeight="32.0" prefWidth="238.0" />
+      <TextField fx:id="txtId" layoutX="525.0" layoutY="37.0" prefHeight="32.0" prefWidth="238.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="456.0" layoutY="42.0" text="ID:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

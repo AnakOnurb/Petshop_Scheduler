@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pack.petshop.AgendamentoController">
+   <children>
+      <Label layoutX="18.0" layoutY="58.0" text="Pet:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cboPet" layoutX="171.0" layoutY="53.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="53.0" />
+      <DatePicker fx:id="dtpData" layoutX="171.0" layoutY="93.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="93.0" />
+      <Label layoutX="18.0" layoutY="95.0" text="Data:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="140.0" text="Horario:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="dtDados" layoutX="14.0" layoutY="258.0" onMouseClicked="#dtDadosClickedHandler" prefHeight="275.0" prefWidth="752.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="258.0" />
+      <TextField fx:id="txtHorario" layoutX="171.0" layoutY="136.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="136.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnDesmarcar" layoutX="639.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnDesmarcarHandler" prefHeight="32.0" prefWidth="124.0" text="DESMARCAR" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="152.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAlterar" layoutX="639.0" layoutY="109.0" mnemonicParsing="false" onAction="#btnAlterarHandler" prefHeight="32.0" prefWidth="124.0" text="ALTERAR" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="109.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSalvar" layoutX="639.0" layoutY="69.0" mnemonicParsing="false" onAction="#btnSalvarHandler" prefHeight="32.0" prefWidth="124.0" text="SALVAR" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="69.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="cboFuncionario" layoutX="171.0" layoutY="178.0" prefHeight="32.0" prefWidth="406.0" AnchorPane.leftAnchor="171.0" AnchorPane.rightAnchor="203.0" AnchorPane.topAnchor="178.0" />
+      <Label layoutX="18.0" layoutY="183.0" text="Funcionário:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnNovo" layoutX="639.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnNovoHandler" prefHeight="32.0" prefWidth="124.0" text="NOVO" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="24.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="18.0" layoutY="223.0" text="Tipo de Serviço:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cboServico" layoutX="171.0" layoutY="218.0" prefHeight="32.0" prefWidth="406.0" />
+      <Button fx:id="btnPagar" layoutX="639.0" layoutY="194.0" mnemonicParsing="false" onAction="#btnPagarHandler" prefHeight="32.0" prefWidth="124.0" text="PAGAR">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtId" layoutX="171.0" layoutY="14.0" prefHeight="32.0" prefWidth="406.0">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="18.0" layoutY="18.0" text="ID:">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
